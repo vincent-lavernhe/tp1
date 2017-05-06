@@ -24,7 +24,7 @@ Rendez-vous sur la page d'accueil de [github](https://github.com/) :
 
 ![](src/main/resources/assets/ecran_d_accueil.png)
 
-Dans le coin supérieur droit cliquer sur "Sign Up". Dans la page qui apparait, inscrivez votre nom d'utilisateur (il doit être composé de votre prénom et de votre nom spéparé par le caractere '-'). 
+Dans le coin supérieur droit cliquer sur "Sign Up". Dans la page qui apparaît, inscrivez votre nom d'utilisateur (il doit être composé de votre prénom et de votre nom séparé par le caractère '-'). 
 Dans le champs "Email Adress" mettre votre adresse universitaire (important pour bénéficier des avantages liés à votre statut d'étudiant). 
 
 ![](src/main/resources/assets/join_github2.png)
@@ -33,7 +33,7 @@ Une fois le mot de passe renseigné cliquer sur le bouton "Create Account". Sur 
 
 ![](src/main/resources/assets/welcom_to_github.png)
 
-Le troisième et dernier écran d'enregistrement vous demande des informations sur votre profil. Indiquer principalement que vous êtes un étudiant et que vous comptez utiliser github pour des projets étudiants.
+Le troisième et dernier écran d'enregistrement vous demande des informations sur votre profil. Indiquer principalement que vous êtes un étudiant et que vous comptez utiliser GitHub pour des projets étudiants.
 
 ![](src/main/resources/assets/welcom_to_github2.png)
 
@@ -43,14 +43,14 @@ Une fois ces informations renseignées vous pouvez cliquer sur "Submit" pour dé
 
 Ne pas oublier de valider votre adresse email en allant cliquer sur le lien reçu dans l'ENT.
 
-#### Paramétrage de votre compte Github
+#### Paramétrage de votre compte GitHub
 
-Maintenant que votre compte est créé, il faut personnaliser votre profil. Github, en plus de vous fournir un moyen simple 
+Maintenant que votre compte est créé, il faut personnaliser votre profil. GitHub, en plus de vous fournir un moyen simple 
 et efficace de conserver votre code en ligne, est aussi un réseau social de développeur. Pour que votre profil puisse 
 être valorisé un jour dans votre carrière pro, vous devez correctement renseigner vos informations (de manière annexe, 
 ça facilitera la vie de vos enseignants quand ils essayent de savoir qui contribue vraiment au projet tutoré).
 
-Pour ce faire, cliquer en haut à droite de la fenêtre sur l'icone qui représente votre avatar par défaut et aller sur "Your profile"  :
+Pour ce faire, cliquer en haut à droite de la fenêtre sur l’icône qui représente votre avatar par défaut et aller sur "Your profile"  :
 
 ![](src/main/resources/assets/your_profile.png)
 
@@ -75,7 +75,7 @@ Cliquer sur le bouton "Get your pack" et certifiez que vous êtes bien un étudi
 
 ![](src/main/resources/assets/im_a_student.png)
 
-Vérifiez les informations vous concernants (Nom, Email et École principalement)
+Vérifiez les informations vous concernant (Nom, Email et École principalement)
 
 ![](src/main/resources/assets/request_a_discount.png)
 
@@ -91,7 +91,7 @@ il existe une  pléthore d'outils pour faciliter l'utilisation de Git mais pour 
 commandes sous-jacentes.
 
 La première chose à faire avant d'utiliser Git est de correctement le configurer. Cette étape en pratique peut prendre 
-du temps mais nous allons simplifier la chose en téléchageant deux fichiers : 
+du temps mais nous allons simplifier la chose en téléchargeant deux fichiers : 
 
 ```sh
 wget https://raw.githubusercontent.com/IUTInfoAix-M2105/git_config/master/gitconfig -O ~/.gitconfig
@@ -125,7 +125,7 @@ email = alfred.tartempion@etu.univ-amu.fr
 
 #### Prise en main de Git
 
-Pour continuer à prendre en main Git et Github, vous allez suivre un tutoriel intéractif vous permettant de découvrir 
+Pour continuer à prendre en main Git et GitHub, vous allez suivre un tutoriel interactif vous permettant de découvrir 
 l'une après l'autre, les possibilités de ces outils. 
 
 Ce tutoriel prend la forme d'une application de bureau appelée **[Git-It](https://github.com/jlord/git-it-electron)**. 
@@ -135,7 +135,7 @@ Vous apprendrez la géniale ligne de commande (et pas si effrayante) et GitHub, 
 vous terminerez tous les défis, vous aurez de vrais dépôts sur votre compte GitHub et vos carrés verts comme les grands 
 sur votre tableau de contribution.
 
-Nous avons fait une pull-request à l'auteur de ce logiciel pour le traduire, si vous avez de la chance, elle sera intégrée 
+Nous avons fait une pull request à l'auteur de ce logiciel pour le traduire, si vous avez de la chance, elle sera intégrée 
 au moment de vos TP.
 
 Pour l'installer, rendez-vous sur la page suivante : 
@@ -158,15 +158,16 @@ Si disponible à l'instant où vous faites le TP, passez l'interface en Françai
 étape du tutoriel peut être passée car vous l'avez déjà réalisée dans la précédente étape du TP.
 
 #### Création de votre fork du TP1
+
 Maintenant que vous connaissez les bases de Git, vous allez pouvoir commencer à travailler sur vos TP. Comme vous allez 
 le découvrir le rendu, l'évaluation et le suivi de votre travail passera par GitHub. La première chose que vous allez 
 donc faire est de créer un fork d'un dépôt. Pour ce faire, rendez-vous sur le lien suivant : 
 
 [https://classroom.github.com/assignment-invitations/be2e508aa8f5fd632d0a9f2c30e3aaba](https://classroom.github.com/assignment-invitations/be2e508aa8f5fd632d0a9f2c30e3aaba) 
 
-GitHub va vous créer un dépôt contenant un fork du dépot 'IUTInfoAix-m2105/tp1' et s'appellant 'IUTInfoAix-m2105/tp1-votreUsername'. 
+GitHub va vous créer un dépôt contenant un fork du dépôt 'IUTInfoAix-m2105/tp1' et s'appellant 'IUTInfoAix-m2105/tp1-votreUsername'. 
 Vous serez ajouter automatiquement comme contributeur de ce projet pour y pousser votre travail. Sachez qu'un robot 
-récupèrera automatiquement votre code après chaque *push* pour vérifier que les tests passent et calculer en même temps 
+récupérera automatiquement votre code après chaque *push* pour vérifier que les tests passent et calculer en même temps 
 votre taux d'accomplissement du TP.
 
 #### Visualiser la branche courante
@@ -200,8 +201,102 @@ Tapez `source ~/.bash_profile` pour charger la nouvelle configuration. Votre pro
 
 S'il y a des modifications pas encore versionnées, le nom de la branche courante sera suivi du caractère '*'.
 
-###
+### Découverte et prise en main de l'IDE
+
+Pendant les TP, les enseignants utiliseront comme environnement de développement intégré 
+**[IntelliJ IDEA](https://www.jetbrains.com/idea/)** de chez **[JetBrains](https://www.jetbrains.com)**. Cet IDE 
+spécialisé dans Java est celui qui aujourd'hui possède la meilleure intégration native d'outils comme Git, GitHub et Maven. 
+Il devrait donc vous faciliter la vie au quotidien dans la réalisation de vos TP. Bien évidement, rien ne vous empêche 
+d'en utiliser un autre mais attention dans ce cas là, vos enseignants attendront une totale autonomie vis à vis des 
+problèmes de prise en main de votre IDE.
+
+IntelliJ IDEA possède deux versions, la première dite *'communautaire'* est totalement open source et peut être utilisée 
+gratuitement par n'importe qui et la seconde dite *'ultimate'* qui est plus riche en fonctionnalité et qui n'est pas 
+gratuite pour les individus lambda. Par chance, en tant qu'étudiant dans une université française, vous avez la 
+possibilité de pouvoir bénéficier d'une licence pour tous les produits JetBrains. Pour bénéficier de cette remise, il 
+vous suffit de remplir [ce formulaire](https://www.jetbrains.com/shop/eform/students).
+
+Quelques minutes après, vous recevrez un email de confirmation suivi d'un second email d'activation ou vous devrez accepter 
+les conditions d'utilisation et choisir un nom d'utilisateur et un mot de passe. Conservez précieusement ces 
+informations dans un coin identifié de votre cerveau car c'est grâce à elle que vous pourrez importer votre licence 
+chez vous et dans les salles de TP.
+
+#### Lancement de l'IDE
+
+Allez dans le Menu 'Application' et ouvrir 'IntelliJ IDEA' dans la section programmation.
+
+Après le chargement, vous devriez tomber sur une première fenêtre vous proposant d'importer vos paramètres.
+
+![](src/main/resources/assets/complete_installation.png)
+
+Laissez sur 'Do not import settings' et cliquez sur 'OK'. À partir de là vous allez personnaliser votre installation 
+pour qu'elle corresponde à vos besoins.
+
+Sur la première fenêtre de personnalisation, vous devez choisir l’apparence de votre IDE. Ici rien de fondamental, vous 
+pouvez choisir l'option que vous voulez. 
+
+![](src/main/resources/assets/customize_intellij_idea1.png)
+
+Les deux écrans suivants sont plutôt destinés à une installation sur une machine personnelle. À l'IUT vous pouvez laisser 
+les options par défaut et passer à la suite.
+
+![](src/main/resources/assets/customize_intellij_idea2.png)
+![](src/main/resources/assets/customize_intellij_idea3.png)
+
+Les deux écrans suivants vous permettent de choisir les plugins que vous allez activer. De manière générale, il vaut 
+mieux en activer le moins possible pour éviter les mauvaises surprises.
+
+![](src/main/resources/assets/customize_intellij_idea4.png)
+![](src/main/resources/assets/customize_intellij_idea5.png)
+
+Voici la configuration que je vous conseille :
+- **Java Framworks :** Aucun
+- **Build Tools :** Maven
+- **Web Development :** Tous
+- **Versions Controls :** Git et Github
+- **Test Tools :** Tous
+- **Application Servers :** Aucun
+- **Clouds :** Aucun
+- **UI Designer :** Activé
+- **Android :** Désactivé
+- **Database Tools :** Choix par défaut
+- **Other Tools :** Tous
+- **Plugin Development :** Désactivé
+
+Il ne reste plus qu'à saisir vos données de connexion pour terminer le paramétrage de votre IDE.
+
+![](src/main/resources/assets/activate_licence.png)
 
 #### Import du projet dans l'IDE
+
+Pour pouvoir maintenant travailler sur votre TP, il vous faut cloner votre dépôt GitHub et l'importer dans 
+l'IDE.
+
+![](src/main/resources/assets/welcome.png)
+
+Pour ce faire cliquez sur 'Check out from Version Control' puis sur 'GitHub'. Vous allez arriver sur 
+la fenêtre de connexion à GitHub.
+
+![](src/main/resources/assets/login_to_github1.png)
+
+Cliquez sur 'Create API Token' et sur la fenêtre suivante entrez vos identifiants GitHub et cliquez sur 'Login'. 
+
+![](src/main/resources/assets/login_to_github2.png)
+
+Vous revenez sur la fenêtre précédente où vous pouvez aussi cliquer sur 'Login'.
+
+![](src/main/resources/assets/login_to_github3.png)
+
+
+À partir de là, vous voyez apparaître la fenêtre 'Clone Repository' dans laquelle vous allez pouvoir choisir le dépôt 
+distant que vous allez cloner et ouvrir. Ici sélectionnez votre fork du TP1 qui devrait avoir un nom de la 
+forme 'IUTInfoAix-m2105/tp1-votreUsername'.
+
+![](src/main/resources/assets/clone_repository.png)
+
+*ItelliJ IDEA* va détecter que votre projet possède un fichier `pom.xml`, il vous suffit de cliquer sur 'Yes' pour 
+terminer l'import de votre projet et commencer à travailler. 
+
+![](src/main/resources/assets/checkout_repository.png)
 
 #### Workflow
