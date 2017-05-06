@@ -44,6 +44,7 @@ Une fois ces informations renseignées vous pouvez cliquer sur "Submit" pour dé
 Ne pas oublier de valider votre adresse email en allant cliquer sur le lien reçu dans l'ENT.
 
 #### Paramétrage de votre compte Github
+
 Maintenant que votre compte est créé, il faut personnaliser votre profil. Github, en plus de vous fournir un moyen simple 
 et efficace de conserver votre code en ligne, est aussi un réseau social de développeur. Pour que votre profil puisse 
 être valorisé un jour dans votre carrière pro, vous devez correctement renseigner vos informations (de manière annexe, 
@@ -64,6 +65,7 @@ Cliquer sur le bouton "Edit profile" pour arriver sur le formulaire suivant :
 Comme dans l'image précédente, renseignez correctement votre nom, prénom, votre localisation et éventuellement votre photo.
 
 #### Demande du "Student Pack"
+
 Pour terminer la configuration de votre compte, il vous faut demander la remise académique vous permettant de bénéficier 
 de dépôts privés et de nombreux autres avantages. Pour ce faire, il faut vous rendre sur la page suivante : https://education.github.com/pack
 
@@ -83,6 +85,7 @@ il peut arriver que ça puisse prendre plus de temps donc pas d'inquiétude.
 ![](src/main/resources/assets/discount_submiting.png)
 
 #### Configuration locale de Git
+
 Pour commencer avec Git, nous utilisons directement la version en ligne de commande. Comme vous les verrez rapidement, 
 il existe une  pléthore d'outils pour faciliter l'utilisation de Git mais pour s'en servir, il vaut mieux comprendre les 
 commandes sous-jacentes.
@@ -119,6 +122,7 @@ email = alfred.tartempion@etu.univ-amu.fr
 ```
 
 #### Prise en main de Git
+
 Pour continuer à prendre en main Git et Github, vous allez suivre un tutoriel intéractif vous permettant de découvrir 
 l'une après l'autre, les possibilités de ces outils. 
 
@@ -150,7 +154,6 @@ Git-it-Linux-x64/Git-it
 
 Si disponible à l'instant où vous faites le TP, passez l'interface en Français en cliquant en haut à gauche. La première 
 étape du tutoriel peut être passée car vous l'avez déjà réalisée dans la précédente étape du TP.
-
 
 #### Visualiser la branche courante
 
