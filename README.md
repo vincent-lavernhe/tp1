@@ -117,6 +117,7 @@ email = alfred.tartempion@etu.univ-amu.fr
 ...
 
 ```
+
 #### Prise en main de Git
 Pour continuer à prendre en main Git et Github, vous allez suivre un tutoriel intéractif vous permettant de découvrir 
 l'une après l'autre, les possibilités de ces outils. 
@@ -149,6 +150,38 @@ Git-it-Linux-x64/Git-it
 
 Si disponible à l'instant où vous faites le TP, passez l'interface en Français en cliquant en haut à gauche. La première 
 étape du tutoriel peut être passée car vous l'avez déjà réalisée dans la précédente étape du TP.
+
+
+#### Visualiser la branche courante
+
+Histoire de visualiser plus facilement sur quelle branche vous êtes, modifiez votre prompt bash afin qu'il affiche la
+branche courante.
+
+Éditez le fichier `~/.bash_profile` (ou `~/net-home/.bash_profile`) et ajoutez les lignes suivantes:
+
+```sh
+parse_git_dirty (){
+  [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo "*"
+}
+
+parse_git_branch () {
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/^..\(.*\)/(\1$(parse_git_dirty))/"
+}
+
+# Prompt simple pour afficher la branche git courante
+#PS1="\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]"
+PS1="\[\033[01;34m\]\w\[\033[00m\]" 
+PS1="$PS1\[\033[01;31m\]\$(parse_git_branch)\[\033[00m\]"
+PS1="$PS1\$"
+```
+
+Tapez `source ~/.bash_profile` pour charger la nouvelle configuration. Votre prompt devrait ressembler à cela:
+
+```
+~/net-home/tpIHM/tp1 (master)$
+```
+
+S'il y a des modifications pas encore versionnées, le nom de la branche courante sera suivi du caractère '*'.
 
 #### Import du projet dans l'IDE
 
