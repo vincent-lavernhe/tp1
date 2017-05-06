@@ -14,7 +14,7 @@
 
 L'objectif premier de ce TP est de vous familiariser avec tous les nouveaux outils qui seront mis en oeuvre pendant ce cours. En plus de la réalisation d'IHM, ces TP seront la première occasion de se confronter à la gestion de version, au test unitaire et à des outils de gestion de cycle de vie logiciel comme Maven.
 
-### Préparation de l'environnement
+### Découverte de Git et préparation de l'environnement
 
 Comme vous allez le découvrir, pour conserver vos réalisations et permettre à votre enseignant de suivre votre avancement vous allez apprendre versionner votre travail sur [github](https://github.com/). Pendant ce module, vous allez principalement écrire du code pour vous-même. Comme vous le verrez plus tard ça sera principalement sur les projets à plusieurs que [Git](https://git-scm.com/) offrira sa tout son potentiel.
 
@@ -103,6 +103,7 @@ section `[user]`.
 ```
 # Personnalisez les champs ci-dessous!
 [user]
+username = ChangeMe
 name = Change Me
 email = change-me@example.com
 
@@ -114,6 +115,7 @@ Les lignes précédentes doivent donc être modifiées de la sorte :
 ```
 # Personnalisez les champs ci-dessous!
 [user]
+username = alfred-tartempion
 name = Alfred Tartempion
 email = alfred.tartempion@etu.univ-amu.fr
 
@@ -155,6 +157,18 @@ Git-it-Linux-x64/Git-it
 Si disponible à l'instant où vous faites le TP, passez l'interface en Français en cliquant en haut à gauche. La première 
 étape du tutoriel peut être passée car vous l'avez déjà réalisée dans la précédente étape du TP.
 
+#### Création de votre fork du TP1
+Maintenant que vous connaissez les bases de Git, vous allez pouvoir commencer à travailler sur vos TP. Comme vous allez 
+le découvrir le rendu, l'évaluation et le suivi de votre travail passera par GitHub. La première chose que vous allez 
+donc faire est de créer un fork d'un dépôt. Pour ce faire, rendez-vous sur le lien suivant : 
+
+[https://classroom.github.com/assignment-invitations/be2e508aa8f5fd632d0a9f2c30e3aaba](https://classroom.github.com/assignment-invitations/be2e508aa8f5fd632d0a9f2c30e3aaba) 
+
+GitHub va vous créer un dépôt contenant un fork du dépot 'IUTInfoAix-m2105/tp1' et s'appellant 'IUTInfoAix-m2105/tp1-votreUsername'. 
+Vous serez ajouter automatiquement comme contributeur de ce projet pour y pousser votre travail. Sachez qu'un robot 
+récupèrera automatiquement votre code après chaque *push* pour vérifier que les tests passent et calculer en même temps 
+votre taux d'accomplissement du TP.
+
 #### Visualiser la branche courante
 
 Histoire de visualiser plus facilement sur quelle branche vous êtes, modifiez votre prompt bash afin qu'il affiche la
@@ -185,6 +199,8 @@ Tapez `source ~/.bash_profile` pour charger la nouvelle configuration. Votre pro
 ```
 
 S'il y a des modifications pas encore versionnées, le nom de la branche courante sera suivi du caractère '*'.
+
+###
 
 #### Import du projet dans l'IDE
 
