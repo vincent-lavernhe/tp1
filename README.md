@@ -290,8 +290,8 @@ Vous revenez sur la fenêtre précédente où vous pouvez aussi cliquer sur 'Log
 
 À partir de là, vous voyez apparaître la fenêtre 'Clone Repository' dans laquelle vous allez pouvoir choisir le dépôt 
 distant que vous allez cloner et ouvrir. Ici sélectionnez votre fork du TP1 qui devrait avoir un nom de la 
-forme 'IUTInfoAix-m2105/tp1-votreUsername'. Mémorisez bien le dossier dans lequel vous clonez votre projet pour le 
-retrouver par la suite en ligne de commande pour soumettre vos changement et les pousser en ligne. 
+forme 'IUTInfoAix-m2105/tp1-votreUsername'. Mémorisez bien le dossier dans lequel vous clonez votre projet pour retrouver 
+le par la suite en ligne de commande pour soumettre vos changement et les pousser en ligne. 
 
 ![](src/main/resources/assets/clone_repository.png)
 
@@ -299,6 +299,41 @@ retrouver par la suite en ligne de commande pour soumettre vos changement et les
 terminer l'import de votre projet et commencer à travailler. 
 
 ![](src/main/resources/assets/checkout_repository.png)
+
+#### Découverte de l'IDE
+Lorsque vous ouvrez votre projet, vous arrivez sur une fenêtre comme celle-ci :
+
+![](src/main/resources/assets/fenetre_principale_idea1.png)
+
+Cliquez sur l’icône en bas à gauche et sélectionnez 'Project' pour avoir la vue de votre projet
+
+![](src/main/resources/assets/fenetre_principale_idea2.png)
+
+Dans cette vue, vous pouvez voir les différents dossiers de votre projet. Pour le TP, vous travaillerez 
+principalement dans deux d'entre eux : 
+
+- `src/main/java/fr/univ_amu/iut/` : Qui contiendra l'ensemble du code applicatif (le code des exercices).
+- `src/test/java/fr/univ_amu/iut/` : Qui contient les classes de test associées (le code vous aidant à vérifier votre solution).
+
+La première fois que vous lancez IntelliJ IDEA, il faut indiquer quel JDK utiliser. Pour ce faire, ouvrez n'importe quel 
+fichier Java de votre projet. En haut de l'éditeur, vous devriez avoir un bandeau jaune vous indiquant l'absence de JDK.
+
+![](src/main/resources/assets/define_project_jdk.png)
+
+Cliquez sur `Setup SDK` pour choisir le JDK à utiliser.
+
+![](src/main/resources/assets/select_project_sdk.png)
+
+Cliquez sur `Configure ...` puis sur l'écran suivant cliquer sur le plus vert en haut à gauche :
+
+![](src/main/resources/assets/configure_sdk.png)
+
+Choisir le dossier contenant Java 8 :
+
+![](src/main/resources/assets/select_home_directory_for_jdk.png)
+
+Validez trois fois jusqu'à revenir à l'éditeur. Maintenant votre projet est complètement configuré vous allez pouvoir 
+commencer à prendre en main l'IDE.
 
 ### Workflow
 
@@ -313,7 +348,7 @@ applicatif. Pour le développeur, les test vont constituer une spécification te
 moment. Ainsi en rajoutant des tests, le développeur converge progressivement à la fois vers une spécification plus fine 
 et un code fonctionnel associé.
 
-Le workflow du TDD est souvent décrit par le triptyque "RED, GREEN, REFACTOR".  
+Le workflow du TDD est souvent décrit par le triptyque "RED, GREEN, REFACTOR".
 
 ![](https://www.ministryoftesting.com/wp-content/uploads/2014/08/graphic_1.jpg.png)
 
@@ -322,7 +357,7 @@ donnés pour vous faire découvrir cette méthode sans trop de douleur.
 
 #### Étapes du cycle principal
 
-1. **RED :** Dans cette étape, vous devez activer un test en enlevant le `@Ignore` devant la méthode de test. Une fois 
+1. **RED :** Dans cette étape, vous devez activer un test en enlevant le `@Ignore` devant la méthode de test (ou en la décommentant). Une fois 
 le test activé, vous devez le lancer pour vérifier qu'il échoue. Un test qui n'échoue jamais ne test rien donc il ne 
 sert à rien.
 
@@ -347,7 +382,7 @@ Le badge **Travis** est une image qui reflète l'état d'un dépôt. Quand elle 
 compile et passe les tests. Quand il est rouge c'est que quelque chose ne va pas et quand il est gris c'est que votre 
 projet n'a pas encore été évalué.
 
-Généralement on met cette image dans le fichier 'README.md' pour connaître l'état d'un dépôt GitHub directement à partir 
+Généralement on met cette image dans le fichier `README.md` pour connaître l'état d'un dépôt GitHub directement à partir 
 de sa page d'accueil. Vous pouvez voir sur l'image ci-dessous ce à quoi ressemble le badge Travis quand tout va bien :
 
 ![](src/main/resources/assets/README_MD_Travis.png)
@@ -385,4 +420,109 @@ remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
 To https://github.com/IUTInfoAix-M2105/tp1-VotreUsername.git
    98072aa..dda6239  master -> master
 ```
+
+#### Exécution des tests
+
+Pour exécuter vos tests, vous avez deux options, la première est d'utiliser l'IDE en ouvrant la classe de test et en 
+cliquant dans la marge de l'éditeur sur le bouton ![](src/main/resources/assets/executer_la_classe_de_test.png).
+
+Le résultat de l’exécution s'affiche en bas de la fenêtre de l'IDE. Les tests ayant réussi sont affiché en vert et ceux 
+ayant échoué sont en rouge. Pour connaître la cause d'un échec, vous pouvez cliquer sur le nom de la méthode de test.
+
+La seconde manière est d'utiliser la ligne de commande directement. Avec cette méthode, vous ne pouvez pas choisir 
+individuellement la classe de test à lancer. Tous les tests sont exécutés en séquence l'un après l'autre. Cette méthode 
+est donc à préférer quand vous voulez vérifier tout votre code, par exemple avant de faire un *push* sur votre fork GitHub.
+
+Pour utiliser cette méthode, il vous suffit de vous rendre dans le dossier de votre projet et de lancer la 
+commande `mvn test` :
+
+```
+~/net-home/tpIHM/tp1-VotreUsername (master*)$ mvn test
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Tp 1 1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ tp1 ---
+[INFO] Copying 34 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ tp1 ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/sebastien/exercism/java/tp1/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ tp1 ---
+[INFO] skip non existing resourceDirectory /home/sebastien/exercism/java/tp1/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ tp1 ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/sebastien/exercism/java/tp1/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.17:test (default-test) @ tp1 ---
+[INFO] Surefire report directory: /home/sebastien/exercism/java/tp1/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running fr.univ_amu.iut.AppTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.023 sec - in fr.univ_amu.iut.AppTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 1.573 s
+[INFO] Finished at: 2017-05-07T12:03:33+02:00
+[INFO] Final Memory: 16M/207M
+[INFO] ------------------------------------------------------------------------
+```
+
+Si à la fin vous voyez apparaître une ligne avec `BUILD SUCCESS` c'est que tout s'est bien passé et 
+que votre projet est dans un état assez satisfaisant pour être poussé en ligne.
+
+
+### Exercice 1 : Hello world !
+
+Exercice d'introduction classique. Dites simplement "Hello world!"
+
+"Hello world" est le premier programme traditionnel pour commencer la programmation dans un nouveau langage ou 
+un nouvel environnement.
+
+Les objectifs sont simples:
+- Écrivez une fonction qui renvoie la chaîne "Hello, World!".
+- Exécutez la suite de tests et assurez-vous qu'elle réussit.
+- Poussez votre solution sur GitHub et vérifiez que votre badge Travis devient vert quelques minutes après.
+- Si tout va bien, vous serez enfin prêt à travailler enfin sur votre premier exercice réel.
+
+Bien évidement l'implémentation qui vous est demandée n'est pas canonique mais elle illustre sur un exemple très simple 
+ce qui vous sera demandé dans la suite des exercices. N'oubliez pas le workflow et surtout de ne passer à l'exercice 
+suivant qu'après avoir activé tous les tests les uns après les autres.
+
+### Exercice 2 : Fizz Buzz !
+
+Le jeu du Fizz Buzz est un jeu sympa à organiser lors d’un anniversaire avec des enfants.
+
+**But du jeu** : Les enfants doivent essayer de remplacer les nombres multiples de cinq et sept respectivement par les 
+mots fizz et buzz : "Fizz" correspond aux multiples de "3" et "Buzz" aux multiples de "5".
+
+**Déroulement du jeu** : Les enfants sont organisés en cercle. Vous désignez un premier enfant qui prononce le chiffre 
+"un" à voix haute. Son voisin de gauche poursuit en prononçant le chiffre "deux". On continue ainsi jusqu’à ce que l’on 
+arrive à un nombre multiple de 3 ou de 5. Le premier piège se situe donc au chiffre 3. L’enfant à qui c’est le tour, 
+devra donc dire "fizz" et non "trois".
+
+Voici un exemple de série détaillée jusqu’à 20 :
+
+1 ; 2 ; Fizz ; 4 ; Buzz ; Fizz ; 7 ; 8 ; Fizz ; Buzz ; 11 ; Fizz ; 13 ; 14 ; FizzBuzz ; 16 ; 17 ; Fizz ; 19 ; Buzz ;
+
+Un enfant qui se trompe deux fois est éliminé.
+
+L'objectif de cet exercice est simple:
+- Implémentez une classe `FizzBuzzer` qui vous permettra de générer toute la série 'FizzBuzz' jusqu'à une valeur 
+passée en paramètre. 
+
+Comme pour l'exercice précédent, vous devez activer les tests les un après les autres et soumettre votre solution après 
+chaque itération du cycle principal du workflow.
 
