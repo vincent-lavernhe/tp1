@@ -195,7 +195,7 @@ PS1="$PS1\$"
 
 Tapez `source ~/.bash_profile` pour charger la nouvelle configuration. Votre prompt devrait ressembler à cela:
 
-```
+```sh
 ~/net-home/tpIHM/tp1 (master)$
 ```
 
@@ -290,7 +290,8 @@ Vous revenez sur la fenêtre précédente où vous pouvez aussi cliquer sur 'Log
 
 À partir de là, vous voyez apparaître la fenêtre 'Clone Repository' dans laquelle vous allez pouvoir choisir le dépôt 
 distant que vous allez cloner et ouvrir. Ici sélectionnez votre fork du TP1 qui devrait avoir un nom de la 
-forme 'IUTInfoAix-m2105/tp1-votreUsername'.
+forme 'IUTInfoAix-m2105/tp1-votreUsername'. Mémorisez bien le dossier dans lequel vous clonez votre projet pour le 
+retrouver par la suite en ligne de commande pour soumettre vos changement et les pousser en ligne. 
 
 ![](src/main/resources/assets/clone_repository.png)
 
@@ -299,4 +300,89 @@ terminer l'import de votre projet et commencer à travailler.
 
 ![](src/main/resources/assets/checkout_repository.png)
 
-#### Workflow
+### Workflow
+
+Maintenant que vous savez utiliser Git en ligne de commande, que vous avez forké, importé et ouvert le TP dans votre IDE, 
+vous êtes en capacité de travailler sur vos exercices. Pour vous faire découvrir le Test Driven Development (TDD), nous 
+allons vous proposer de suivre un workflow particulier pour résoudre vos exercices progressivement et en consolidant 
+progressivement un filet de sécurité qui vérifiera que votre code continue à bien faire ce qu'il doit.
+
+Le TDD est une méthode de conception émergente c'est-à-dire que la conception apparaît au fur et à mesure du 
+développement en encourageant une meilleure compréhension du problème en commençant à écrire les tests avant le code 
+applicatif. Pour le développeur, les test vont constituer une spécification technique exécutable et vérifiable à tout 
+moment. Ainsi en rajoutant des tests, le développeur converge progressivement à la fois vers une spécification plus fine 
+et un code fonctionnel associé.
+
+Le workflow du TDD est souvent décrit par le triptyque "RED, GREEN, REFACTOR".  
+
+![](https://www.ministryoftesting.com/wp-content/uploads/2014/08/graphic_1.jpg.png)
+
+Le workflow que vous allez devoir suivre va reprendre la même structure, mis à part qu'au début, les tests vous sont 
+donnés pour vous faire découvrir cette méthode sans trop de douleur.
+
+#### Étapes du cycle principal
+
+1. **RED :** Dans cette étape, vous devez activer un test en enlevant le `@Ignore` devant la méthode de test. Une fois 
+le test activé, vous devez le lancer pour vérifier qu'il échoue. Un test qui n'échoue jamais ne test rien donc il ne 
+sert à rien.
+
+1. **GREEN :** Ici vous devez écrire le moins de code possible pour faire passer le test en question. Quand vous pensez 
+avoir terminé, vous relancez le test en question pour vérifier que le code est juste. Si tel est le cas, vous lancez tous 
+les autres tests pour vous assurer que votre implémentation n'a rien cassé.
+
+1. **REFACTOR :** Maintenant que votre couverture de test est au vert, vous pouvez transformer votre code pour le nettoyer, 
+le restructurer et l'améliorer sans en changer le comportement. Pendant cette étape, les tests doivent être continuellement 
+au vert. Ils jouent le rôle de filet de sécurité pour éviter l'introduction d'une régression dans le code. Quand tout 
+est terminé vous pouvez redémarrer le cycle avec un prochain test.
+
+À chaque fin de cycle, vous devez soumettre votre travail sur votre dépôt Git local et le pousser sur votre fork sur 
+GitHub. Vous terminez un exercice lorsque tous les tests y sont activés et passent sur votre dépôt distant.
+
+#### Visualisation de l'état du dépôt distant
+
+Pour être certain que vos tests sont toujours au vert sur votre dépôt GitHub, vous pouvez personnaliser l'URL du badge 
+**Travis** présent dans le fichier `README.md`.
+
+Le badge **Travis** est une image qui reflète l'état d'un dépôt. Quand elle est verte, le code présent dans le dépôt 
+compile et passe les tests. Quand il est rouge c'est que quelque chose ne va pas et quand il est gris c'est que votre 
+projet n'a pas encore été évalué.
+
+Généralement on met cette image dans le fichier 'README.md' pour connaître l'état d'un dépôt GitHub directement à partir 
+de sa page d'accueil. Vous pouvez voir sur l'image ci-dessous ce à quoi ressemble le badge Travis quand tout va bien :
+
+![](src/main/resources/assets/README_MD_Travis.png)
+
+
+Pour bénéficier de ce badge pour votre dépôt, ouvrez le fichier `README.md` recherchez la ligne suivante :
+
+```
+ ## TP 1 : Découverte de l'environnement de travail, des outils et premiers programmes en Java [![Build Status](https://travis-ci.org/IUTInfoAix-M2105/tp1.svg?branch=master)](https://travis-ci.org/IUTInfoAix-M2105/tp1)
+```
+
+La modifier en ajoutant votre nom d'utilisateur pour que le mettre en correspondance avec le nom de votre fork :
+
+```
+ ## TP 1 : Découverte de l'environnement de travail, des outils et premiers programmes en Java [![Build Status](https://travis-ci.org/IUTInfoAix-M2105/tp1-VotreUsername.svg?branch=master)](https://travis-ci.org/IUTInfoAix-M2105/tp1-VotreUsername)
+```
+
+Une fois cette modification faite, vous devez la pousser sur votre GitHub en exécutant les commandes suivantes :
+
+```sh
+~/net-home/tpIHM/tp1-VotreUsername (master*)$ git add README.md
+~/net-home/tpIHM/tp1-VotreUsername (master*)$ git commit -m "Mise à jour du badge Travis"
+[master dda6239] Mise à jour du badge Travis
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+~/net-home/tpIHM/tp1-VotreUsername (master)$ git push origin master
+git push origin master
+Username for 'https://github.com': VotreUsername
+Password for 'https://VotreUsername@github.com': 
+Décompte des objets: 3, fait.
+Delta compression using up to 8 threads.
+Compression des objets: 100% (3/3), fait.
+Écriture des objets: 100% (3/3), 328 bytes | 0 bytes/s, fait.
+Total 3 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/IUTInfoAix-M2105/tp1-VotreUsername.git
+   98072aa..dda6239  master -> master
+```
+
