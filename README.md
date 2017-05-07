@@ -506,7 +506,7 @@ Exercice d'introduction classique. Dites simplement "Hello world!"
 "Hello world" est le premier programme traditionnel pour commencer la programmation dans un nouveau langage ou 
 un nouvel environnement.
 
-Les objectifs sont simples:
+#### Les objectifs sont simples:
 - Écrivez une fonction qui renvoie la chaîne "Hello, World!".
 - Exécutez la suite de tests et assurez-vous qu'elle réussit.
 - Poussez votre solution sur GitHub et vérifiez que votre badge Travis devient vert quelques minutes après.
@@ -534,7 +534,7 @@ Voici un exemple de série détaillée jusqu’à 20 :
 
 Un enfant qui se trompe deux fois est éliminé.
 
-L'objectif de cet exercice est simple:
+#### L'objectif de cet exercice est :
 - Implémentez une classe `FizzBuzzer` qui vous permettra de générer toute la série 'FizzBuzz' jusqu'à une valeur 
 passée en paramètre. 
 
@@ -552,7 +552,7 @@ Un nombre écrit en chiffres romains se lit de gauche à droite. En première ap
 faisant la somme des valeurs individuelles de chaque symbole, sauf quand l'un des symboles précède un symbole de 
 valeur supérieure ; dans ce cas, on soustrait la valeur du premier symbole au deuxième.
 
-L'objectif de cet exercice est :
+#### L'objectif de cet exercice est :
 - Écrire une classe `ConvertisseurDeNombreRomain` qui aura une fonction qui prendra en paramètre un nombre romain et 
 retournera sa représentation en une valeur entière.
 
@@ -570,3 +570,40 @@ Les nombres romains sont majoritairement représentés selon les principes suiva
 
 Comme pour l'exercice précédent, vous devez activer les tests les un après les autres et soumettre votre solution après 
 chaque itération du cycle principal du workflow.
+
+### Exercice 4 : Gestion des arguments de la ligne de commande
+Cet exercice est présenté dans le livre de Robert C. Martin "Clean Code", chapitre 14.
+
+#### Description du problème
+La plupart des développeurs ont dû analyser des arguments en ligne de commande de temps en temps. 
+Si nous ne disposons pas d'un utilitaire pratique, nous parcourons naïvement le tableau de chaînes de caractères passée 
+en argument de la fonction `main`. Il existe plusieurs utilitaires disponibles, mais ils ne font probablement pas 
+exactement ce que nous voulons. Alors, réinventons la roue et écrivons-en un autre!
+
+Les arguments passés au programme se composent de drapeaux et de valeurs. Les drapeaux doivent être un caractère, 
+précédé d'un signe moins. Chaque drapeau doit avoir zéro, ou une valeur associée.
+
+Vous devrez écrire un analyseur pour ce genre d'arguments. Cet analyseur prend un schéma en précisant les arguments que 
+le programme attend. Le schéma spécifie le nombre et les types de drapeaux et les valeurs que le programme attend.
+
+Une fois que le schéma a été spécifié, le programme doit passer la liste d'arguments réelle à l'analyseur d'arguments. 
+Il vérifiera que les arguments correspondent au schéma. Le programme peut ensuite demander à l'analyseur chacune des 
+valeurs, en utilisant les noms des drapeaux. Les valeurs sont renvoyées avec les types appropriés, comme spécifié dans 
+le schéma.
+
+Par exemple, si le programme doit être appelé avec ces arguments:
+
+```sh
+-l -p 8080 -d "/usr/logs"
+```
+
+Cela indique un schéma avec 3 drapeaux: l, p, d. Le drapeau "l" (journalisation) n'a pas de valeur associée à celui-ci, 
+c'est un drapeau booléen, Vrai si présent, Faux sinon. Le drapeau "p" (port) a une valeur entière et le drapeau "d" 
+(répertoire) a une valeur de chaîne.
+
+Si un drapeau mentionné dans le schéma manque dans les arguments, une valeur par défaut appropriée doit être renvoyée. 
+Par exemple "False" pour un boolean, 0 pour un nombre et "" pour une chaîne. Si les arguments donnés ne correspondent 
+pas au schéma, il est important qu'un bon message d'erreur soit donné, expliquant exactement ce qui ne va pas.
+
+Assurez-vous que votre code est extensible, en ce sens qu'il est direct et évident de savoir comment ajouter un nouveaux 
+types de valeurs.
