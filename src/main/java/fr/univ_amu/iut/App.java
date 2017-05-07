@@ -8,6 +8,9 @@ public class App
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        System.out.println("Affichage des arguments de la ligne de commande :");
+        for (String arg : args) {
+            System.out.println(arg);
+        }
     }
 }

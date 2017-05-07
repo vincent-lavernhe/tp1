@@ -572,12 +572,13 @@ Comme pour l'exercice précédent, vous devez activer les tests les un après le
 chaque itération du cycle principal du workflow.
 
 ### Exercice 4 : Gestion des arguments de la ligne de commande
-Cet exercice est présenté dans le livre de Robert C. Martin "Clean Code", chapitre 14.
+Cet exercice est présenté dans le livre de Robert C. Martin "Clean Code", chapitre 14. Attention il est beaucoup plus 
+complexe que les précédents. Il pourra être fait que partiellement dans un premier temps.
 
 #### Description du problème
 La plupart des développeurs ont dû analyser des arguments en ligne de commande de temps en temps. 
-Si nous ne disposons pas d'un utilitaire pratique, nous parcourons naïvement le tableau de chaînes de caractères passée 
-en argument de la fonction `main`. Il existe plusieurs utilitaires disponibles, mais ils ne font probablement pas 
+Si nous ne disposons pas d'un utilitaire pratique, nous parcourons naïvement le tableau de chaînes de caractères 
+(`String[]`) passée en argument de la fonction `main`. Il existe plusieurs utilitaires disponibles, mais ils ne font probablement pas 
 exactement ce que nous voulons. Alors, réinventons la roue et écrivons-en un autre!
 
 Les arguments passés au programme se composent de drapeaux et de valeurs. Les drapeaux doivent être un caractère, 
@@ -607,3 +608,23 @@ pas au schéma, il est important qu'un bon message d'erreur soit donné, expliqu
 
 Assurez-vous que votre code est extensible, en ce sens qu'il est direct et évident de savoir comment ajouter un nouveaux 
 types de valeurs.
+
+#### Indications :
+
+- les arguments de la ligne de commande sont stockés dans le tableau de String figurant dans le profil de la 
+méthode `main()` :
+    ```java
+    public static void main(String[] args)
+    ```
+    Le tableau est nommé args et args[0] contient le premier argument.
+- Dans le paquetage `fr.univ_amu.iut` la classe `App` contient est une classe exécutable qui affiche sur la sortie 
+standard la valeur de chacun des arguments de passé au programme.
+- Pour donner des arguments à une application dans IntelliJ IDEA, il faut passer par le menu `Run->Edit Configurations...`.
+  En sélectionnant `App`, vous pouvez spécifier vos arguments dans le champ *Program Arguments*
+  
+  ![](src/main/resources/assets/edit_configuration.png)
+- Regardez bien les différents test pour bien comprendre les schémas.
+
+#### Travail à faire :
+- Écrire une classe `Args` qui permettra de manipuler facilement la ligne de commande. Dans un premier temps, 
+inutile d'aller plus loin que le test `testSpacesInFormat`.

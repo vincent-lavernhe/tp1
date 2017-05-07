@@ -1,5 +1,6 @@
 package fr.univ_amu.iut.exercice4;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static fr.univ_amu.iut.exercice4.ArgsException.ErrorCode.*;
@@ -7,13 +8,14 @@ import static org.junit.Assert.*;
 
 public class ArgsTest {
 
+    @Ignore
     @Test
     public void testCreateWithNoSchemaOrArguments() throws Exception {
         Args args = new Args("", new String[0]);
         assertEquals(0, args.nextArgument());
     }
 
-
+    @Ignore
     @Test
     public void testWithNoSchemaButWithOneArgument() throws Exception {
         try {
@@ -25,6 +27,7 @@ public class ArgsTest {
         }
     }
 
+    @Ignore
     @Test
     public void testWithNoSchemaButWithMultipleArguments() throws Exception {
         try {
@@ -37,6 +40,7 @@ public class ArgsTest {
 
     }
 
+    @Ignore
     @Test
     public void testNonLetterSchema() throws Exception {
         try {
@@ -48,6 +52,7 @@ public class ArgsTest {
         }
     }
 
+    @Ignore
     @Test
     public void testInvalidArgumentFormat() throws Exception {
         try {
@@ -59,6 +64,7 @@ public class ArgsTest {
         }
     }
 
+    @Ignore
     @Test
     public void testSimpleBooleanPresent() throws Exception {
         Args args = new Args("x", new String[]{"-x"});
@@ -66,6 +72,7 @@ public class ArgsTest {
         assertEquals(1, args.nextArgument());
     }
 
+    @Ignore
     @Test
     public void testSimpleStringPresent() throws Exception {
         Args args = new Args("x*", new String[]{"-x", "param"});
@@ -74,6 +81,7 @@ public class ArgsTest {
         assertEquals(2, args.nextArgument());
     }
 
+    @Ignore
     @Test
     public void testMissingStringArgument() throws Exception {
         try {
@@ -85,6 +93,7 @@ public class ArgsTest {
         }
     }
 
+    @Ignore
     @Test
     public void testSpacesInFormat() throws Exception {
         Args args = new Args("x, y", new String[]{"-xy"});
@@ -93,6 +102,7 @@ public class ArgsTest {
         assertEquals(1, args.nextArgument());
     }
 
+    @Ignore
     @Test
     public void testSimpleIntPresent() throws Exception {
         Args args = new Args("x#", new String[]{"-x", "42"});
@@ -101,6 +111,7 @@ public class ArgsTest {
         assertEquals(2, args.nextArgument());
     }
 
+    @Ignore
     @Test
     public void testInvalidInteger() throws Exception {
         try {
@@ -114,6 +125,7 @@ public class ArgsTest {
 
     }
 
+    @Ignore
     @Test
     public void testMissingInteger() throws Exception {
         try {
@@ -125,6 +137,7 @@ public class ArgsTest {
         }
     }
 
+    @Ignore
     @Test
     public void testSimpleDoublePresent() throws Exception {
         Args args = new Args("x##", new String[]{"-x", "42.3"});
@@ -132,6 +145,7 @@ public class ArgsTest {
         assertEquals(42.3, args.getDouble('x'), .001);
     }
 
+    @Ignore
     @Test
     public void testInvalidDouble() throws Exception {
         try {
@@ -144,6 +158,7 @@ public class ArgsTest {
         }
     }
 
+    @Ignore
     @Test
     public void testMissingDouble() throws Exception {
         try {
@@ -155,7 +170,7 @@ public class ArgsTest {
         }
     }
 
-
+    @Ignore
     @Test
     public void testExtraArguments() throws Exception {
         Args args = new Args("x,y*", new String[]{"-x", "-y", "alpha", "beta"});
@@ -164,6 +179,7 @@ public class ArgsTest {
         assertEquals(3, args.nextArgument());
     }
 
+    @Ignore
     @Test
     public void testExtraArgumentsThatLookLikeFlags() throws Exception {
         Args args = new Args("x,y", new String[]{"-x", "alpha", "-y", "beta"});
