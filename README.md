@@ -483,6 +483,21 @@ Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
 Si à la fin vous voyez apparaître une ligne avec `BUILD SUCCESS` c'est que tout s'est bien passé et 
 que votre projet est dans un état assez satisfaisant pour être poussé en ligne.
 
+#### Visualisation de la couverture du code par les tests
+Il faut savoir que lorsque l'on fait du développement dirigé par les tests, l'un des objectifs est de faire en sorte 
+que chaque ligne de code applicatif soit au moins couvert par un seul test. Le pourcentage de lignes couvertes par les 
+tests est donc un des indicateurs vous permettant d'évaluer la qualité de votre code (tout au moins la non qualité quand 
+ce taux est bas).
+
+Dans le processus d'inspection continue mis en place pour évaluer vos TP, nous avons activé la possibilité de visualisé 
+votre couverture de test directement sur GitHub. Pour visualiser cette couverture, il vous suffit d'installer une 
+[extension pour votre navigateur](https://docs.codecov.io/docs/browser-extension).
+
+[![Codecov](http://img.youtube.com/vi/d6wJKODB8_g/0.jpg)](http://www.youtube.com/watch?v=d6wJKODB8_g "Codecov.io")
+
+Une fois cette extension installée, il vous suffira de vous rendre sur la page web de votre dépôt et de naviguer dans 
+votre code pour visualiser la couverture et connaître le taux par unité de compilation. Il est évident que plus ce taux 
+sera proche de 100% plus cela voudra dire que vous avez correctement écrit votre code en respectant à la lettre le workflow.
 
 ### Exercice 1 : Hello world !
 
@@ -528,6 +543,7 @@ chaque itération du cycle principal du workflow.
 
 
 ### Exercice 3 : Convertisseur de nombre romain
+
 La numération romaine est un système de numération additive utilisé par les Romains de l'Antiquité. Les chiffres romains 
 sont représentés à l'aide de symboles combinés entre eux, notamment par les signes I, V, X, L, C, D et M, représentant 
 respectivement les nombres 1, 5, 10, 50, 100, 500 et 1 000. 
@@ -549,7 +565,8 @@ Les nombres romains sont majoritairement représentés selon les principes suiva
   * X doit être retranché à L ou à C quand X est devant L ou C (ex. : 40 s'écrit XL),
   * C doit être retranché à D ou à M quand C est devant D ou M (ex. : 900 s'écrit CM),
   * Par contre, ôter I de L ou de C n'est pas pratiqué (49 s'écrit XLIX et non IL ; 99 s'écrit XCIX et pas IC) ;
-- Les symboles sont groupés par ordre décroissant, sauf pour les valeurs à retrancher selon la règle précédente (ex. : 1030 s'écrit MXXX et non XXXM qui est une des façons de représenter 970)
+- Les symboles sont groupés par ordre décroissant, sauf pour les valeurs à retrancher selon la règle précédente 
+(ex. : 1030 s'écrit MXXX et non XXXM qui est une des façons de représenter 970).
 
 Comme pour l'exercice précédent, vous devez activer les tests les un après les autres et soumettre votre solution après 
 chaque itération du cycle principal du workflow.
