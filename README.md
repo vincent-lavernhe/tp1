@@ -628,3 +628,71 @@ standard la valeur de chacun des arguments de passé au programme.
 #### Travail à faire :
 - Écrire une classe `Args` qui permettra de manipuler facilement la ligne de commande. Dans un premier temps, 
 inutile d'aller plus loin que le test `testSpacesInFormat`.
+- Modifiez la classe `App` pour quelle utilise votre classe `Arg` pour gérer la ligne de commande suivant un schéma que 
+vous aurez choisi. 
+
+Comme pour l'exercice précédent, vous devez activer les tests les un après les autres et soumettre votre solution après 
+chaque itération du cycle principal du workflow.
+
+### Exercice 5 : Simulateur de robot
+
+L'installation d'essai d'une usine de robots nécessite un programme pour vérifier les mouvements du robot. Les robots 
+ont trois mouvements possibles:
+
+- tourner à droite
+- tourner à gauche
+- avancer
+
+Les robots sont placés sur une grille hypothétique infinie, face à une direction cardinale particulière (nord, est, sud 
+ou ouest) à des coordonnées {x, y}, par exemple, {3,8}, avec des coordonnées croissantes vers le nord et l'est.
+
+Le robot reçoit alors un certain nombre d'instructions, auquel cas l'installation de test vérifie la nouvelle position 
+du robot et dans quelle direction il pointe.
+
+La chaine de caractères "RAALAL" signifie:
+- Tournez à droite
+- Avance deux fois
+- Tournez à gauche
+- Avance une fois
+- Tournez encore à gauche
+
+Supposons qu'un robot commence à {7, 3} face au nord. Ensuite, s'il execute séquence d'instructions ci-dessus il devrait 
+se trouver aux coordonnées {9, 4} face à l'ouest.
+
+#### Indications :
+Pour mémoriser l'ensemble des instructions, nous ne pouvons connaitre à l'avance le nombre d'instructions contenues dans 
+la chaine de commade. Les tableaux ne sont donc pas adaptés. Nous allons utiliser un objet d’une classe implémentant 
+l’interface `Collection`, par exemple un objet `ArrayList`.
+
+L’interface `Collection` est très générale et définit ce qu’une classe collectionnant des objets devrait fournir comme 
+méthodes. Il n’y en a qu’une quinzaine parmi lesquelles :
+
+- `add()` et `addAll()` pour ajouter des éléments
+- `clear()`, `remove()`, `removeAll()` et `retainAll()` pour enlever des éléments
+- `contains()`, `containsAll()` pour savoir si des éléments sont présents
+- `isEmpty()`, `size()` pour connaître le nombre d’éléments
+...
+
+Elle est implémentée et étendue par les nombreuses collections spécialisées comme les ensembles (`Set`) qui garantissent 
+qu’un élément est unique dans la collection, les listes (`List`) où les éléments ont des positions, et de nombreuses 
+autres classes et interfaces.
+
+Puisque nous voulons afficher les instructions dans l’ordre de la séquence de commande, nous avons besoin d’une classe 
+qui maintienne cet ordre et qui permette de le suivre lors du parcours. C’est ce qu’impose l’interface `List` qui 
+étend `Collection` notamment ainsi :
+
+- les éléments sont indexés par un entier, le premier élément se trouvant à l’indice 0 ;
+- la méthode `get()` est introduite et permet d’obtenir l’élément se trouvant à une position donnée ;
+- les méthodes `add()` et `addAll()` ajoutent les éléments en fin de liste ou à une position donnée.
+
+Nous avons tous les ingrédients pour résoudre notre problème. Il ne manque plus qu’à choisir une classe parmi celles 
+implémentant `List`... Dans les exercices qui suivent, nous choisirons `ArrayList`.
+
+#### Travail à faire :
+
+- Écrire une classe `Robot` représentant le robot à simuler.
+- Écrire une classe `RobotSimulator` qui permet de passer une chaine d'instructions à un robot et de piloter le 
+  fonctionnement du robot en fonction d'une séquence d'instructions passées en paramètre.
+  
+Comme pour l'exercice précédent, vous devez activer les tests les un après les autres et soumettre votre solution après 
+chaque itération du cycle principal du workflow.
