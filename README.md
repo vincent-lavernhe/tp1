@@ -526,3 +526,30 @@ passée en paramètre.
 Comme pour l'exercice précédent, vous devez activer les tests les un après les autres et soumettre votre solution après 
 chaque itération du cycle principal du workflow.
 
+
+### Exercice 3 : Convertisseur de nombre romain
+La numération romaine est un système de numération additive utilisé par les Romains de l'Antiquité. Les chiffres romains 
+sont représentés à l'aide de symboles combinés entre eux, notamment par les signes I, V, X, L, C, D et M, représentant 
+respectivement les nombres 1, 5, 10, 50, 100, 500 et 1 000. 
+
+Un nombre écrit en chiffres romains se lit de gauche à droite. En première approximation, sa valeur se détermine en 
+faisant la somme des valeurs individuelles de chaque symbole, sauf quand l'un des symboles précède un symbole de 
+valeur supérieure ; dans ce cas, on soustrait la valeur du premier symbole au deuxième.
+
+L'objectif de cet exercice est :
+- Écrire une classe `ConvertisseurDeNombreRomain` qui aura une fonction qui prendra en paramètre un nombre romain et 
+retournera sa représentation en une valeur entière.
+
+Les nombres romains sont majoritairement représentés selon les principes suivants :
+- Un nombre en chiffres romains se lit de gauche à droite ;
+- Un même symbole n'est pas employé quatre fois de suite (sauf M) ;
+- Tout symbole qui suit un symbole de valeur supérieure ou égale s’ajoute à celui-ci (exemple : 6 s'écrit VI) ;
+- Tout symbole qui précède un symbole de valeur supérieure se soustrait à ce dernier ;
+  * I doit être retranché à V ou à X quand I est devant V ou X}} (ex. : 4 s'écrit IV),
+  * X doit être retranché à L ou à C quand X est devant L ou C (ex. : 40 s'écrit XL),
+  * C doit être retranché à D ou à M quand C est devant D ou M (ex. : 900 s'écrit CM),
+  * Par contre, ôter I de L ou de C n'est pas pratiqué (49 s'écrit XLIX et non IL ; 99 s'écrit XCIX et pas IC) ;
+- Les symboles sont groupés par ordre décroissant, sauf pour les valeurs à retrancher selon la règle précédente (ex. : 1030 s'écrit MXXX et non XXXM qui est une des façons de représenter 970)
+
+Comme pour l'exercice précédent, vous devez activer les tests les un après les autres et soumettre votre solution après 
+chaque itération du cycle principal du workflow.
