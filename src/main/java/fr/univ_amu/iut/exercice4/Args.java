@@ -13,23 +13,23 @@ public class Args {
         throw new RuntimeException("Not yet implemented !");
     }
 
-    public boolean getBoolean(char x) {
+    public boolean getBoolean(char arg) {
         throw new RuntimeException("Not yet implemented !");
     }
 
-    public String getString(char x) {
+    public String getString(char arg) {
         throw new RuntimeException("Not yet implemented !");
     }
 
-    public boolean has(char x) {
+    public boolean has(char arg) {
         throw new RuntimeException("Not yet implemented !");
     }
 
-    public int getInt(char x) {
+    public int getInt(char arg) {
         throw new RuntimeException("Not yet implemented !");
     }
 
-    public double getDouble(char x) {
+    public double getDouble(char arg) {
         throw new RuntimeException("Not yet implemented !");
     }
 
