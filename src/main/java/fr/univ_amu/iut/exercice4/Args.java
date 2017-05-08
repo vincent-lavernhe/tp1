@@ -2,6 +2,8 @@ package fr.univ_amu.iut.exercice4;
 
 import java.util.List;
 
+import static fr.univ_amu.iut.exercice4.ArgsException.ErrorCode.INVALID_ARGUMENT_NAME;
+
 public class Args {
     public Args(String schema, String[] strings) throws ArgsException {
         throw new RuntimeException("Not yet implemented !");
@@ -32,14 +34,17 @@ public class Args {
     }
 
     private void parseSchema(String schema) throws ArgsException {
-        throw new RuntimeException("Not yet implemented !");
-    }
-
-    private void parseSchemaElement(String element) throws ArgsException {
-        throw new RuntimeException("Not yet implemented !");
+        for (String element : schema.split(","))
+            if (element.length() > 0)
+                parseSchemaElement(element.trim());
     }
 
     private void validateSchemaElementId(char elementId) throws ArgsException {
+        if (!Character.isLetter(elementId))
+            throw new ArgsException(INVALID_ARGUMENT_NAME, elementId, null);
+    }
+
+    private void parseSchemaElement(String element) throws ArgsException {
         throw new RuntimeException("Not yet implemented !");
     }
 
