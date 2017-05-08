@@ -16,7 +16,7 @@ L'objectif premier de ce TP est de vous familiariser avec tous les nouveaux outi
 
 ### Découverte de Git et préparation de l'environnement
 
-Comme vous allez le découvrir, pour conserver vos réalisations et permettre à votre enseignant de suivre votre avancement vous allez apprendre versionner votre travail sur [github](https://github.com/). Pendant ce module, vous allez principalement écrire du code pour vous-même. Comme vous le verrez plus tard ça sera principalement sur les projets à plusieurs que [Git](https://git-scm.com/) offrira sa tout son potentiel.
+Comme vous allez le découvrir, pour conserver vos réalisations et permettre à votre enseignant de suivre votre avancement vous allez apprendre à versionner votre travail sur [github](https://github.com/). Pendant ce module, vous allez principalement écrire du code pour vous-même. Comme vous le verrez plus tard ça sera principalement sur les projets à plusieurs que [Git](https://git-scm.com/) offrira sa tout son potentiel.
 
 #### Création d'un compte Github
 
@@ -98,7 +98,7 @@ wget https://raw.githubusercontent.com/IUTInfoAix-M2105/git_config/master/gitcon
 wget https://raw.githubusercontent.com/IUTInfoAix-M2105/git_config/master/githelpers -O ~/.githelpers
 ```
 
-Ouvrez le fichier `~/.gitconfig` avec votre éditeur favori et modifier en ajoutant votre nom, prénom et email dans la 
+Ouvrez le fichier `~/.gitconfig` avec votre éditeur favori et renseignez votre nom, prénom et email dans la 
 section `[user]`.
 ```
 # Personnalisez les champs ci-dessous!
@@ -160,13 +160,13 @@ Si disponible à l'instant où vous faites le TP, passez l'interface en Françai
 #### Création de votre fork du TP1
 
 Maintenant que vous connaissez les bases de Git, vous allez pouvoir commencer à travailler sur vos TP. Comme vous allez 
-le découvrir le rendu, l'évaluation et le suivi de votre travail passera par GitHub. La première chose que vous allez 
+le découvrir le rendu, l'évaluation et le suivi de votre travail passeront par GitHub. La première chose que vous allez 
 donc faire est de créer un fork d'un dépôt. Pour ce faire, rendez-vous sur le lien suivant : 
 
 [https://classroom.github.com/assignment-invitations/be2e508aa8f5fd632d0a9f2c30e3aaba](https://classroom.github.com/assignment-invitations/be2e508aa8f5fd632d0a9f2c30e3aaba) 
 
 GitHub va vous créer un dépôt contenant un fork du dépôt 'IUTInfoAix-m2105/tp1' et s'appellant 'IUTInfoAix-m2105/tp1-votreUsername'. 
-Vous serez ajouter automatiquement comme contributeur de ce projet pour y pousser votre travail. Sachez qu'un robot 
+Vous apparaîtrez automatiquement comme contributeur de ce projet pour y pousser votre travail. Sachez qu'un robot 
 récupérera automatiquement votre code après chaque *push* pour vérifier que les tests passent et calculer en même temps 
 votre taux d'accomplissement du TP.
 
@@ -189,8 +189,8 @@ parse_git_branch () {
 # Prompt simple pour afficher la branche git courante
 #PS1="\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]"
 PS1="\[\033[01;34m\]\w\[\033[00m\]" 
-PS1="$PS1\[\033[01;31m\]\$(parse_git_branch)\[\033[00m\]"
-PS1="$PS1\$"
+PS1="$PS1 \[\033[01;31m\]\$(parse_git_branch)\[\033[00m\]"
+PS1="$PS1\$ "
 ```
 
 Tapez `source ~/.bash_profile` pour charger la nouvelle configuration. Votre prompt devrait ressembler à cela:
@@ -290,8 +290,7 @@ Vous revenez sur la fenêtre précédente où vous pouvez aussi cliquer sur 'Log
 
 À partir de là, vous voyez apparaître la fenêtre 'Clone Repository' dans laquelle vous allez pouvoir choisir le dépôt 
 distant que vous allez cloner et ouvrir. Ici sélectionnez votre fork du TP1 qui devrait avoir un nom de la 
-forme 'IUTInfoAix-m2105/tp1-votreUsername'. Mémorisez bien le dossier dans lequel vous clonez votre projet pour retrouver 
-le par la suite en ligne de commande pour soumettre vos changement et les pousser en ligne. 
+forme 'IUTInfoAix-m2105/tp1-votreUsername'. Mémorisez bien le dossier dans lequel vous clonez votre projet. Vous aurez besoin d'y accéder par la suite en ligne de commande pour soumettre vos changement et les pousser en ligne. 
 
 ![](src/main/resources/assets/clone_repository.png)
 
@@ -344,7 +343,7 @@ progressivement un filet de sécurité qui vérifiera que votre code continue à
 
 Le TDD est une méthode de conception émergente c'est-à-dire que la conception apparaît au fur et à mesure du 
 développement en encourageant une meilleure compréhension du problème en commençant à écrire les tests avant le code 
-applicatif. Pour le développeur, les test vont constituer une spécification technique exécutable et vérifiable à tout 
+applicatif. Pour le développeur, les tests vont constituer une spécification technique exécutable et vérifiable à tout 
 moment. Ainsi en rajoutant des tests, le développeur converge progressivement à la fois vers une spécification plus fine 
 et un code fonctionnel associé.
 
@@ -358,7 +357,7 @@ donnés pour vous faire découvrir cette méthode sans trop de douleur.
 #### Étapes du cycle principal
 
 1. **RED :** Dans cette étape, vous devez activer un test en enlevant le `@Ignore` devant la méthode de test (ou en la décommentant). Une fois 
-le test activé, vous devez le lancer pour vérifier qu'il échoue. Un test qui n'échoue jamais ne test rien donc il ne 
+le test activé, vous devez le lancer pour vérifier qu'il échoue. Un test qui n'échoue jamais ne teste rien donc il ne 
 sert à rien.
 
 1. **GREEN :** Ici vous devez écrire le moins de code possible pour faire passer le test en question. Quand vous pensez 
