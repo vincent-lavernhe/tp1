@@ -564,6 +564,7 @@ valeur supérieure ; dans ce cas, on soustrait la valeur du premier symbole au d
 - Écrire une classe `ConvertisseurDeNombreRomain` qui aura une fonction qui prendra en paramètre un nombre romain et 
 retournera sa représentation en une valeur entière.
 
+#### Indications :
 Les nombres romains sont majoritairement représentés selon les principes suivants :
 - Un nombre en chiffres romains se lit de gauche à droite ;
 - Un même symbole n'est pas employé quatre fois de suite (sauf M) ;
@@ -575,6 +576,10 @@ Les nombres romains sont majoritairement représentés selon les principes suiva
   * Par contre, ôter I de L ou de C n'est pas pratiqué (49 s'écrit XLIX et non IL ; 99 s'écrit XCIX et pas IC) ;
 - Les symboles sont groupés par ordre décroissant, sauf pour les valeurs à retrancher selon la règle précédente 
 (ex. : 1030 s'écrit MXXX et non XXXM qui est une des façons de représenter 970).
+
+Dans cet exercice, vous allez pour la première fois, manipuler la classe [`String`](https://docs.oracle.com/javase/8/docs/api/?java/lang/String.html). Cette classe possède de nombreuses méthodes utilitaires pour manipuler facilement les chaines de caractères. Prennez un peu de temps pour survoler la documentation avant de commencer la résolution de cet exercice. Ici, vous utiliserez principalement une boucle `for` et la méthode `charAt(i)` qui retourne le i-ème caractère d'une chaine.
+
+Faites très attention pour cet exercice de bien respecter le principe du TDD en ajoutant vraiment tout le temps la quantité minimale de code nécessaire à la validation des tests. Si vous suivez cette règle, il se résout très facilement alors qu'en l'abordant de manière générale, il comporte de nombreux pièges pouvant vous faire perdre un temps précieux.
 
 Comme pour l'exercice précédent, vous devez activer les tests les un après les autres et soumettre votre solution après 
 chaque itération du cycle principal du workflow.
