@@ -181,7 +181,16 @@ branche courante.
 parse_git_dirty (){
   [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo "*"
 }
+```
+ou
+```sh
+parse_git_dirty (){
+  [[ $(git status 2> /dev/null | tail -n1) != "rien à valider, la copie de travail est propre" ]] && echo "*"
+}
+```
+selon la langue utilisée, puis :
 
+```sh
 parse_git_branch () {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/^..\(.*\)/(\1$(parse_git_dirty))/"
 }
@@ -387,13 +396,13 @@ de sa page d'accueil. Vous pouvez voir sur l'image ci-dessous ce à quoi ressemb
 ![](src/main/resources/assets/README_MD_Travis.png)
 
 
-Pour bénéficier de ce badge pour votre dépôt, ouvrez le fichier `README.md` recherchez la ligne suivante :
+Pour bénéficier de ce badge pour votre dépôt, ouvrez le fichier `README.md` et recherchez la ligne suivante :
 
 ```
  ## TP 1 : Découverte de l'environnement de travail, des outils et premiers programmes en Java [![Build Status](https://travis-ci.org/IUTInfoAix-M2105/tp1.svg?branch=master)](https://travis-ci.org/IUTInfoAix-M2105/tp1)
 ```
 
-La modifier en ajoutant votre nom d'utilisateur pour que le mettre en correspondance avec le nom de votre fork :
+La modifier en ajoutant votre nom d'utilisateur pour la mettre en correspondance avec le nom de votre fork :
 
 ```
  ## TP 1 : Découverte de l'environnement de travail, des outils et premiers programmes en Java [![Build Status](https://travis-ci.org/IUTInfoAix-M2105/tp1-VotreUsername.svg?branch=master)](https://travis-ci.org/IUTInfoAix-M2105/tp1-VotreUsername)
@@ -484,11 +493,11 @@ que votre projet est dans un état assez satisfaisant pour être poussé en lign
 
 #### Visualisation de la couverture du code par les tests
 Il faut savoir que lorsque l'on fait du développement dirigé par les tests, l'un des objectifs est de faire en sorte 
-que chaque ligne de code applicatif soit au moins couvert par un seul test. Le pourcentage de lignes couvertes par les 
+que chaque ligne de code applicatif soit au moins couverte par un test. Le pourcentage de lignes couvertes par les 
 tests est donc un des indicateurs vous permettant d'évaluer la qualité de votre code (tout au moins la non qualité quand 
 ce taux est bas).
 
-Dans le processus d'inspection continue mis en place pour évaluer vos TP, nous avons activé la possibilité de visualisé 
+Dans le processus d'inspection continue mis en place pour évaluer vos TP, nous avons activé la possibilité de visualiser 
 votre couverture de test directement sur GitHub. Pour visualiser cette couverture, il vous suffit d'installer une 
 [extension pour votre navigateur](https://docs.codecov.io/docs/browser-extension).
 
@@ -509,9 +518,9 @@ un nouvel environnement.
 - Écrivez une fonction qui renvoie la chaîne "Hello, World!".
 - Exécutez la suite de tests et assurez-vous qu'elle réussit.
 - Poussez votre solution sur GitHub et vérifiez que votre badge Travis devient vert quelques minutes après.
-- Si tout va bien, vous serez enfin prêt à travailler enfin sur votre premier exercice réel.
+- Si tout va bien, vous serez prêt à travailler enfin sur votre premier exercice réel.
 
-Bien évidement l'implémentation qui vous est demandée n'est pas canonique mais elle illustre sur un exemple très simple 
+Bien évidemment l'implémentation qui vous est demandée n'est pas canonique mais elle illustre sur un exemple très simple 
 ce qui vous sera demandé dans la suite des exercices. N'oubliez pas le workflow et surtout de ne passer à l'exercice 
 suivant qu'après avoir activé tous les tests les uns après les autres.
 
@@ -528,7 +537,7 @@ Une fois l'exercice terminé, n'oubliez pas de pousser vos modifications sur vot
 
 Le jeu du Fizz Buzz est un jeu sympa à organiser lors d’un anniversaire avec des enfants.
 
-**But du jeu** : Les enfants doivent essayer de remplacer les nombres multiples de cinq et sept respectivement par les 
+**But du jeu** : Les enfants doivent essayer de remplacer les nombres multiples de trois et cinq respectivement par les 
 mots fizz et buzz : "Fizz" correspond aux multiples de "3" et "Buzz" aux multiples de "5".
 
 **Déroulement du jeu** : Les enfants sont organisés en cercle. Vous désignez un premier enfant qui prononce le chiffre 
