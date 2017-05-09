@@ -515,6 +515,15 @@ Bien évidement l'implémentation qui vous est demandée n'est pas canonique mai
 ce qui vous sera demandé dans la suite des exercices. N'oubliez pas le workflow et surtout de ne passer à l'exercice 
 suivant qu'après avoir activé tous les tests les uns après les autres.
 
+Une fois l'exercice terminé, n'oubliez pas de pousser vos modifications sur votre fork de la manière suivante : 
+```sh
+~/net-home/tpIHM/tp1-VotreUsername (master*)$ mvn test
+~/net-home/tpIHM/tp1-VotreUsername (master*)$ git add src/test/java/fr/univ_amu/iut/exercice1/HelloWorldTest.java
+~/net-home/tpIHM/tp1-VotreUsername (master*)$ git add src/main/java/fr/univ_amu/iut/exercice1/HelloWorld.java
+~/net-home/tpIHM/tp1-VotreUsername (master*)$ git commit -m "Validation du dernier test de l'exercice 1"
+~/net-home/tpIHM/tp1-VotreUsername (master)$ git push origin master
+```
+
 ### Exercice 2 : Fizz Buzz !
 
 Le jeu du Fizz Buzz est un jeu sympa à organiser lors d’un anniversaire avec des enfants.
