@@ -24,13 +24,6 @@ public class ConvertisseurDeNombreRomainTest {
 
     @Ignore
     @Test
-    public void leChiffreRomainIIDevraitDonner2() {
-        int nombre = convertisseurDeNombreRomain.enNombreArabe("II");
-        assertThat(nombre).isEqualTo(2);
-    }
-
-    @Ignore
-    @Test
     public void leChiffreRomainVDevraitDonner5() {
         int nombre = convertisseurDeNombreRomain.enNombreArabe("V");
         assertThat(nombre).isEqualTo(5);
@@ -41,6 +34,20 @@ public class ConvertisseurDeNombreRomainTest {
     public void leChiffreRomainXDevraitDonner10() {
         int nombre = convertisseurDeNombreRomain.enNombreArabe("X");
         assertThat(nombre).isEqualTo(10);
+    }
+
+    @Ignore
+    @Test
+    public void leChiffreRomainIIDevraitDonner2() {
+        int nombre = convertisseurDeNombreRomain.enNombreArabe("II");
+        assertThat(nombre).isEqualTo(2);
+    }
+
+    @Ignore
+    @Test
+    public void leChiffreRomainIIIDevraitDonner3() {
+        int nombre = convertisseurDeNombreRomain.enNombreArabe("III");
+        assertThat(nombre).isEqualTo(3);
     }
 
     @Ignore
@@ -59,9 +66,23 @@ public class ConvertisseurDeNombreRomainTest {
 
     @Ignore
     @Test
+    public void leChiffreRomainIXDevraitDonner9() {
+        int nombre = convertisseurDeNombreRomain.enNombreArabe("IX");
+        assertThat(nombre).isEqualTo(9);
+    }
+
+    @Ignore
+    @Test
     public void leChiffreRomainXLIXDevraitDonner49() {
         int nombre = convertisseurDeNombreRomain.enNombreArabe("XLIX");
         assertThat(nombre).isEqualTo(49);
+    }
+
+    @Ignore
+    @Test
+    public void leChiffreRomainXCIXDevraitDonner99() {
+        int nombre = convertisseurDeNombreRomain.enNombreArabe("XCIX");
+        assertThat(nombre).isEqualTo(99);
     }
 
     @Ignore
@@ -76,13 +97,6 @@ public class ConvertisseurDeNombreRomainTest {
     public void leChiffreRomainCCCXCIXDevraitDonner399() {
         int nombre = convertisseurDeNombreRomain.enNombreArabe("CCCXCIX");
         assertThat(nombre).isEqualTo(399);
-    }
-
-    @Ignore
-    @Test
-    public void leChiffreRomainXCIXDevraitDonner99() {
-        int nombre = convertisseurDeNombreRomain.enNombreArabe("XCIX");
-        assertThat(nombre).isEqualTo(99);
     }
 
     @Ignore
