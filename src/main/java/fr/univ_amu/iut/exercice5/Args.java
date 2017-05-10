@@ -1,8 +1,8 @@
-package fr.univ_amu.iut.exercice4;
+package fr.univ_amu.iut.exercice5;
 
 import java.util.List;
 
-import static fr.univ_amu.iut.exercice4.ArgsException.ErrorCode.INVALID_ARGUMENT_NAME;
+import static fr.univ_amu.iut.exercice5.ArgsException.ErrorCode.INVALID_ARGUMENT_NAME;
 
 public class Args {
     public Args(String schema, String[] strings) throws ArgsException {

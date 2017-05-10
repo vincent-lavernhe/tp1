@@ -1,10 +1,10 @@
-package fr.univ_amu.iut.exercice5;
+package fr.univ_amu.iut.exercice4;
 
 import java.util.List;
 
 public class RobotSimulator {
-    Robot robot;
-    String instructions;
+    private Robot robot;
+    private String instructions;
 
     public RobotSimulator(Robot robot, String instructions) {
         this.robot = robot;

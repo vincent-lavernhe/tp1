@@ -1,11 +1,11 @@
-package fr.univ_amu.iut.exercice5;
+package fr.univ_amu.iut.exercice4;
 
 import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.List;
 
-import static fr.univ_amu.iut.exercice5.Movement.*;
+import static fr.univ_amu.iut.exercice4.Movement.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public final class RobotTest {
@@ -253,12 +253,11 @@ public final class RobotTest {
         assertThat(robot.getOrientation()).isEqualTo(expectedOrientation);
     }
 
-
     @Ignore
     @Test
     public void testListInstructionsToMoveWestAndNorth() {
         final Robot robot = new Robot(new GridPosition(0, 0), Orientation.NORTH);
-        RobotSimulator simulator = new RobotSimulator(robot, "LAAARALA");
+        RobotSimulator simulator = new RobotSimulator(robot, "LAARALA");
         List<Movement> movements = simulator.getMovements();
         assertThat(movements).containsSequence(LEFT, ADVANCE, ADVANCE, RIGHT, ADVANCE, LEFT, ADVANCE);
     }

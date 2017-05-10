@@ -1,8 +1,8 @@
-package fr.univ_amu.iut.exercice4;
+package fr.univ_amu.iut.exercice5;
 
 import org.junit.Test;
 
-import static fr.univ_amu.iut.exercice4.ArgsException.ErrorCode.*;
+import static fr.univ_amu.iut.exercice5.ArgsException.ErrorCode.*;
 import static org.junit.Assert.assertEquals;
 
 public class ArgsExceptionTest {

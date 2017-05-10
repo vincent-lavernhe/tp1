@@ -1,4 +1,4 @@
-package fr.univ_amu.iut.exercice5;
+package fr.univ_amu.iut.exercice4;
 
 public enum Movement {
     LEFT('L'),
@@ -23,9 +23,5 @@ public enum Movement {
             default:
                 return NONE;
         }
-    }
-
-    public char getInstruction() {
-        return instruction;
     }
 }

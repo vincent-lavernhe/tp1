@@ -1,4 +1,4 @@
-package fr.univ_amu.iut.exercice5;
+package fr.univ_amu.iut.exercice4;
 
 public class GridPosition {
     private int x;
