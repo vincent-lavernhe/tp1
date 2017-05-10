@@ -402,10 +402,10 @@ Pour bénéficier de ce badge pour votre dépôt, ouvrez le fichier `README.md` 
  ## TP 1 : Découverte de l'environnement de travail, des outils et premiers programmes en Java [![Build Status](https://travis-ci.org/IUTInfoAix-M2105/tp1.svg?branch=master)](https://travis-ci.org/IUTInfoAix-M2105/tp1)
 ```
 
-La modifier en ajoutant votre nom d'utilisateur pour la mettre en correspondance avec le nom de votre fork :
+La modifier en ajoutant votre nom d'utilisateur pour la mettre en correspondance avec le nom de votre fork(attention à bien modifier le .org en .com) :
 
 ```
- ## TP 1 : Découverte de l'environnement de travail, des outils et premiers programmes en Java [![Build Status](https://travis-ci.org/IUTInfoAix-M2105/tp1-VotreUsername.svg?branch=master)](https://travis-ci.org/IUTInfoAix-M2105/tp1-VotreUsername)
+ ## TP 1 : Découverte de l'environnement de travail, des outils et premiers programmes en Java [![Build Status](https://travis-ci.com/IUTInfoAix-M2105/tp1-VotreUsername.svg?branch=master)](https://travis-ci.org/IUTInfoAix-M2105/tp1-VotreUsername)
 ```
 
 Une fois cette modification faite, vous devez la pousser sur votre GitHub en exécutant les commandes suivantes :
