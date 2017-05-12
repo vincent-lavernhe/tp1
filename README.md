@@ -175,7 +175,7 @@ votre taux d'accomplissement du TP.
 Histoire de visualiser plus facilement sur quelle branche vous êtes, modifiez votre prompt bash afin qu'il affiche la
 branche courante.
 
-Éditez le fichier `~/.bash_profile` (ou `~/net-home/.bash_profile`) et ajoutez les lignes suivantes:
+Éditez le fichier `~/net-home/.bash_profile` (ou `~/.bash_profile`) et ajoutez les lignes suivantes:
 
 ```sh
 parse_git_dirty (){
@@ -381,54 +381,6 @@ est terminé vous pouvez redémarrer le cycle avec un prochain test.
 À chaque fin de cycle, vous devez soumettre votre travail sur votre dépôt Git local et le pousser sur votre fork sur 
 GitHub. Vous terminez un exercice lorsque tous les tests y sont activés et passent sur votre dépôt distant.
 
-#### Visualisation de l'état du dépôt distant
-
-Pour être certain que vos tests sont toujours au vert sur votre dépôt GitHub, vous pouvez personnaliser l'URL du badge 
-**Travis** présent dans le fichier `README.md`.
-
-Le badge **Travis** est une image qui reflète l'état d'un dépôt. Quand elle est verte, le code présent dans le dépôt 
-compile et passe les tests. Quand il est rouge c'est que quelque chose ne va pas et quand il est gris c'est que votre 
-projet n'a pas encore été évalué.
-
-Généralement on met cette image dans le fichier `README.md` pour connaître l'état d'un dépôt GitHub directement à partir 
-de sa page d'accueil. Vous pouvez voir sur l'image ci-dessous ce à quoi ressemble le badge Travis quand tout va bien :
-
-![](src/main/resources/assets/README_MD_Travis.png)
-
-
-Pour bénéficier de ce badge pour votre dépôt, ouvrez le fichier `README.md` et recherchez la ligne suivante :
-
-```
- ## TP 1 : Découverte de l'environnement de travail, des outils et premiers programmes en Java [![Build Status](https://travis-ci.org/IUTInfoAix-M2105/tp1.svg?branch=master)](https://travis-ci.org/IUTInfoAix-M2105/tp1)
-```
-
-La modifier en ajoutant votre nom d'utilisateur pour la mettre en correspondance avec le nom de votre fork(attention à bien modifier le .org en .com) :
-
-```
- ## TP 1 : Découverte de l'environnement de travail, des outils et premiers programmes en Java [![Build Status](https://travis-ci.com/IUTInfoAix-M2105/tp1-VotreUsername.svg?branch=master)](https://travis-ci.org/IUTInfoAix-M2105/tp1-VotreUsername)
-```
-
-Une fois cette modification faite, vous devez la pousser sur votre GitHub en exécutant les commandes suivantes :
-
-```sh
-~/net-home/tpIHM/tp1-VotreUsername (master*)$ git add README.md
-~/net-home/tpIHM/tp1-VotreUsername (master*)$ git commit -m "Mise à jour du badge Travis"
-[master dda6239] Mise à jour du badge Travis
- 1 file changed, 1 insertion(+), 1 deletion(-)
-~/net-home/tpIHM/tp1-VotreUsername (master)$ git push origin master
-git push origin master
-Username for 'https://github.com': VotreUsername
-Password for 'https://VotreUsername@github.com': 
-Décompte des objets: 3, fait.
-Delta compression using up to 8 threads.
-Compression des objets: 100% (3/3), fait.
-Écriture des objets: 100% (3/3), 328 bytes | 0 bytes/s, fait.
-Total 3 (delta 2), reused 0 (delta 0)
-remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
-To https://github.com/IUTInfoAix-M2105/tp1-VotreUsername.git
-   98072aa..dda6239  master -> master
-```
-
 #### Exécution des tests
 
 Pour exécuter vos tests, vous avez deux options, la première est d'utiliser l'IDE en ouvrant la classe de test et en 
@@ -490,22 +442,6 @@ Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
 
 Si à la fin vous voyez apparaître une ligne avec `BUILD SUCCESS` c'est que tout s'est bien passé et 
 que votre projet est dans un état assez satisfaisant pour être poussé en ligne.
-
-#### Visualisation de la couverture du code par les tests
-Il faut savoir que lorsque l'on fait du développement dirigé par les tests, l'un des objectifs est de faire en sorte 
-que chaque ligne de code applicatif soit au moins couverte par un test. Le pourcentage de lignes couvertes par les 
-tests est donc un des indicateurs vous permettant d'évaluer la qualité de votre code (tout au moins la non qualité quand 
-ce taux est bas).
-
-Dans le processus d'inspection continue mis en place pour évaluer vos TP, nous avons activé la possibilité de visualiser 
-votre couverture de test directement sur GitHub. Pour visualiser cette couverture, il vous suffit d'installer une 
-[extension pour votre navigateur](https://docs.codecov.io/docs/browser-extension).
-
-[![Codecov](http://img.youtube.com/vi/d6wJKODB8_g/0.jpg)](http://www.youtube.com/watch?v=d6wJKODB8_g "Codecov.io")
-
-Une fois cette extension installée, il vous suffira de vous rendre sur la page web de votre dépôt et de naviguer dans 
-votre code pour visualiser la couverture et connaître le taux par unité de compilation. Il est évident que plus ce taux 
-sera proche de 100% plus cela voudra dire que vous avez correctement écrit votre code en respectant à la lettre le workflow.
 
 ### Exercice 1 : Hello world !
 
