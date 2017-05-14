@@ -625,12 +625,46 @@ Cela indique un schéma avec 3 drapeaux: l, p, d. Le drapeau "l" (journalisation
 c'est un drapeau booléen, Vrai si présent, Faux sinon. Le drapeau "p" (port) a une valeur entière et le drapeau "d" 
 (répertoire) a une valeur de chaîne.
 
+Le code suivant donne un exemple d'utilisation de l'utilitaire que vous écrivez pour la ligne de commmande précédente :
+```java
+public class ArgsMain {
+  public static void main(String[] args) {
+    try {
+      Args arg = new Args("l,p#,d*", args);
+      
+      boolean logging = arg.getBoolean('l');
+      int port = arg.getInt('p');
+      String directory = arg.getString('d');
+      
+      executeApplication(logging, port, directory);
+    } catch (ArgsException e) {
+      System.out.printf("Argument error: %s\n", e.errorMessage());
+    }
+  }
+
+  private static void executeApplication(boolean logging, int port, String directory) {
+    System.out.printf("logging is %s, port:%d, directory:%s\n",logging, port, directory);
+  }
+}
+```
+
 Si un drapeau mentionné dans le schéma manque dans les arguments, une valeur par défaut appropriée doit être renvoyée. 
 Par exemple "False" pour un boolean, 0 pour un nombre et "" pour une chaîne. Si les arguments donnés ne correspondent 
 pas au schéma, il est important qu'un bon message d'erreur soit donné, expliquant exactement ce qui ne va pas.
 
 Assurez-vous que votre code est extensible, en ce sens qu'il est direct et évident de savoir comment ajouter un nouveaux 
 types de valeurs.
+
+Schema:
+ - char    - Argument `Boolean`.
+ - char*   - Argument `String`.
+ - char#   - Argument`Integer`.
+ - char##  - Argument `Double`.
+ - char[*] - Un élément d'un tableau de `String`.
+
+Exemple de schema: (f,s*,n#,a##,p[*])
+
+Ligne de commande correspondante : "-f -s Bob -n 1 -a 3.2 -p e1 -p e2 -p e3
 
 #### Indications :
 
@@ -642,6 +676,7 @@ méthode `main()` :
     Le tableau est nommé args et args[0] contient le premier argument.
 - Dans le paquetage `fr.univ_amu.iut` la classe `App` contient est une classe exécutable qui affiche sur la sortie 
 standard la valeur de chacun des arguments de passé au programme.
+
 - Pour donner des arguments à une application dans IntelliJ IDEA, il faut passer par le menu `Run->Edit Configurations...`.
   En sélectionnant `App`, vous pouvez spécifier vos arguments dans le champ *Program Arguments*
   
@@ -651,6 +686,7 @@ standard la valeur de chacun des arguments de passé au programme.
 #### Travail à faire :
 - Écrire une classe `Args` qui permettra de manipuler facilement la ligne de commande. Dans un premier temps, 
 inutile d'aller plus loin que le test `testSpacesInFormat`.
+
 - Modifiez la classe `App` pour quelle utilise votre classe `Arg` pour gérer la ligne de commande suivant un schéma que 
 vous aurez choisi. 
 
