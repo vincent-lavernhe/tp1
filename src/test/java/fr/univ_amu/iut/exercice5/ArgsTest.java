@@ -57,7 +57,7 @@ public class ArgsTest {
     public void testInvalidArgumentFormat() throws Exception {
         try {
             new Args("f~", new String[]{});
-            fail("Args constructor should have throws exception");
+            fail("Args constructor should have thrown exception");
         } catch (ArgsException e) {
             assertEquals(INVALID_ARGUMENT_FORMAT, e.getErrorCode());
             assertEquals('f', e.getErrorArgumentId());
