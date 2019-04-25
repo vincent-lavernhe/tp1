@@ -262,4 +262,21 @@ public final class RobotTest {
         assertThat(movements).containsSequence(LEFT, ADVANCE, ADVANCE, RIGHT, ADVANCE, LEFT, ADVANCE);
     }
 
+    @Ignore
+    @Test
+    public void testListInstructionsToMoveWestAndNorthBis() {
+        final Robot robot = new Robot(new GridPosition(0, 0), Orientation.NORTH);
+        RobotSimulator simulator = new RobotSimulator(robot, "L A A R A L A");
+        List<Movement> movements = simulator.getMovements();
+        assertThat(movements).containsSequence(LEFT, ADVANCE, ADVANCE, RIGHT, ADVANCE, LEFT, ADVANCE);
+    }
+    
+    @Ignore
+    @Test
+    public void testListInstructionsToMoveWestAndNorthTer() {
+        final Robot robot = new Robot(new GridPosition(0, 0), Orientation.NORTH);
+        RobotSimulator simulator = new RobotSimulator(robot, "LAA  RA   LA");
+        List<Movement> movements = simulator.getMovements();
+        assertThat(movements).containsSequence(LEFT, ADVANCE, ADVANCE, RIGHT, ADVANCE, LEFT, ADVANCE);
+    }
 }
