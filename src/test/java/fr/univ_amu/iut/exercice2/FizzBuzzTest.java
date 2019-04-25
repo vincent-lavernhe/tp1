@@ -29,6 +29,13 @@ public class FizzBuzzTest {
         String resultat = fizzBuzz.computeString(3);
         assertThat(resultat).isEqualTo("Fizz");
     }
+    
+    @Ignore
+    @Test
+    public void test_computeString_Should_Return_4_when_4() {
+        String resultat = fizzBuzz.computeString(4);
+        assertThat(resultat).isEqualTo("4");
+    }
 
     @Ignore
     @Test
