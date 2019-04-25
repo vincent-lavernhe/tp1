@@ -35,6 +35,13 @@ public class ConvertisseurDeNombreRomainTest {
         int nombre = convertisseurDeNombreRomain.enNombreArabe("X");
         assertThat(nombre).isEqualTo(10);
     }
+    
+    @Ignore
+    @Test(expected = IllegalArgumentException.class)
+    public void leChiffreRomainZDevraitDonnerUneException() {
+        convertisseurDeNombreRomain.enNombreArabe("Z");
+    }
+
 
     @Ignore
     @Test
@@ -108,11 +115,44 @@ public class ConvertisseurDeNombreRomainTest {
 
     @Ignore
     @Test(expected = IllegalArgumentException.class)
+    public void leChiffreRomainILDevraitDonnerUneException() {
+        convertisseurDeNombreRomain.enNombreArabe("IL");
+    }
+
+    @Ignore
+    @Test(expected = IllegalArgumentException.class)
     public void leChiffreRomainICDevraitDonnerUneException() {
         convertisseurDeNombreRomain.enNombreArabe("IC");
+    }
+
+    @Ignore
+    @Test(expected = IllegalArgumentException.class)
+    public void leChiffreRomainIDDevraitDonnerUneException() {
         convertisseurDeNombreRomain.enNombreArabe("ID");
+    }
+
+    @Ignore
+    @Test(expected = IllegalArgumentException.class)
+    public void leChiffreRomainIMDevraitDonnerUneException() {
         convertisseurDeNombreRomain.enNombreArabe("IM");
+    }
+
+    @Ignore
+    @Test(expected = IllegalArgumentException.class)
+    public void leChiffreRomainVXDevraitDonnerUneException() {
+        convertisseurDeNombreRomain.enNombreArabe("VX");
+    }
+
+    @Ignore
+    @Test(expected = IllegalArgumentException.class)
+    public void leChiffreRomainXDDevraitDonnerUneException() {
         convertisseurDeNombreRomain.enNombreArabe("XD");
+    }
+
+    @Ignore
+    @Test(expected = IllegalArgumentException.class)
+    public void leChiffreRomainXMDevraitDonnerUneException() {
         convertisseurDeNombreRomain.enNombreArabe("XM");
     }
+
 }
