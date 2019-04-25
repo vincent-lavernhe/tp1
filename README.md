@@ -413,7 +413,57 @@ implémentant `List`... Dans les exercices qui suivent, nous choisirons `ArrayLi
 Comme pour l'exercice précédent, vous devez activer les tests les un après les autres et soumettre votre solution après 
 chaque itération du cycle principal du workflow.
 
-### Exercice 5 : Gestion des arguments de la ligne de commande
+### Exercice 5 : Démineur
+
+Le démineur est un jeu de réflexion dont le but est de localiser des mines cachées dans un champ virtuel avec pour seule 
+indication le nombre de mines dans les zones adjacentes.
+
+
+Le champ de mines est représenté par une grille, qui peut avoir différentes formes : deux ou trois dimensions, pavage 
+rectangulaire ou non, etc.
+
+Chaque case de la grille peut soit cacher une mine, soit être vide. Le but du jeu est de découvrir toutes les cases 
+libres sans faire exploser les mines, c'est-à-dire sans cliquer sur les cases qui les dissimulent.
+
+Lorsque le joueur clique sur une case libre comportant au moins une mine dans l'une de ses cases avoisinantes, un chiffre 
+apparaît, indiquant ce nombre de mines. Si en revanche toutes les cases adjacentes sont vides, une case vide est affichée 
+et la même opération est répétée sur ces cases, et ce jusqu'à ce que la zone vide soit entièrement délimitée par des chiffres. 
+En comparant les différentes informations récoltées, le joueur peut ainsi progresser dans le déminage du terrain. S'il se 
+trompe et clique sur une mine, il a perdu.
+
+#### Description du problème
+
+Dans cet exercice, vous devez écrire le code qui compte le nombre de mines adjacentes à une case et transforme des tableaux 
+comme celui-ci (où * indique une mine):
+
+```
++-----+
+| * * |
+|  *  |
+|  *  |
+|     |
++-----+
+```
+
+En ceci :
+
+```
++-----+
+|1*3*1|
+|13*31|
+| 2*2 |
+| 111 |
++-----+
+```
+
+#### Travail à faire :
+- Ecrire la classe `MinesweeperBoard` qui pour un tableau d'entrée avec les mines vous permettent de calculer le tableau 
+avec les nombres.
+
+Comme pour l'exercice précédent, vous devez activer les tests les un après les autres et soumettre votre solution après 
+chaque itération du cycle principal du workflow.
+
+### Exercice 6 : Gestion des arguments de la ligne de commande
 Cet exercice est présenté dans le livre de Robert C. Martin "Clean Code", chapitre 14. Attention il est beaucoup plus 
 complexe que les précédents. Il pourra être fait que partiellement dans un premier temps.
 
@@ -513,53 +563,3 @@ vous aurez choisi.
 Comme pour l'exercice précédent, vous devez activer les tests les un après les autres et soumettre votre solution après 
 chaque itération du cycle principal du workflow.
 
-
-### Exercice 6 : Démineur
-
-Le démineur est un jeu de réflexion dont le but est de localiser des mines cachées dans un champ virtuel avec pour seule 
-indication le nombre de mines dans les zones adjacentes.
-
-
-Le champ de mines est représenté par une grille, qui peut avoir différentes formes : deux ou trois dimensions, pavage 
-rectangulaire ou non, etc.
-
-Chaque case de la grille peut soit cacher une mine, soit être vide. Le but du jeu est de découvrir toutes les cases 
-libres sans faire exploser les mines, c'est-à-dire sans cliquer sur les cases qui les dissimulent.
-
-Lorsque le joueur clique sur une case libre comportant au moins une mine dans l'une de ses cases avoisinantes, un chiffre 
-apparaît, indiquant ce nombre de mines. Si en revanche toutes les cases adjacentes sont vides, une case vide est affichée 
-et la même opération est répétée sur ces cases, et ce jusqu'à ce que la zone vide soit entièrement délimitée par des chiffres. 
-En comparant les différentes informations récoltées, le joueur peut ainsi progresser dans le déminage du terrain. S'il se 
-trompe et clique sur une mine, il a perdu.
-
-#### Description du problème
-
-Dans cet exercice, vous devez écrire le code qui compte le nombre de mines adjacentes à une case et transforme des tableaux 
-comme celui-ci (où * indique une mine):
-
-```
-+-----+
-| * * |
-|  *  |
-|  *  |
-|     |
-+-----+
-```
-
-En ceci :
-
-```
-+-----+
-|1*3*1|
-|13*31|
-| 2*2 |
-| 111 |
-+-----+
-```
-
-#### Travail à faire :
-- Ecrire la classe `MinesweeperBoard` qui pour un tableau d'entrée avec les mines vous permettent de calculer le tableau 
-avec les nombres.
-
-Comme pour l'exercice précédent, vous devez activer les tests les un après les autres et soumettre votre solution après 
-chaque itération du cycle principal du workflow.

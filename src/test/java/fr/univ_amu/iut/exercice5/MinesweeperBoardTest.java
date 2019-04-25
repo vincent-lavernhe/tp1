@@ -1,4 +1,4 @@
-package fr.univ_amu.iut.exercice6;
+package fr.univ_amu.iut.exercice5;
 
 import org.junit.Ignore;
 import org.junit.Rule;

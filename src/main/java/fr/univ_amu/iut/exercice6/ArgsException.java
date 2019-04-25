@@ -1,6 +1,6 @@
-package fr.univ_amu.iut.exercice5;
+package fr.univ_amu.iut.exercice6;
 
-import static fr.univ_amu.iut.exercice5.ArgsException.ErrorCode.OK;
+import static fr.univ_amu.iut.exercice6.ArgsException.ErrorCode.OK;
 
 public class ArgsException extends Exception {
     private char errorArgumentId = '\0';

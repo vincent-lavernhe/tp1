@@ -1,9 +1,9 @@
-package fr.univ_amu.iut.exercice5;
+package fr.univ_amu.iut.exercice6;
 
 import org.junit.Ignore;
 import org.junit.Test;
 
-import static fr.univ_amu.iut.exercice5.ArgsException.ErrorCode.*;
+import static fr.univ_amu.iut.exercice6.ArgsException.ErrorCode.*;
 import static org.junit.Assert.*;
 
 public class ArgsTest {
