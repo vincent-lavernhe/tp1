@@ -13,7 +13,7 @@ public class Args {
         throw new RuntimeException("Not yet implemented !");
     }
 
-    public int nextArgument() {
+    public int cardinality() {
         throw new RuntimeException("Not yet implemented !");
     }
 

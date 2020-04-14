@@ -1,34 +1,33 @@
 package fr.univ_amu.iut.exercice1;
 
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class HelloWorldTest {
 
-   @Ignore
+    @Disabled
     @Test
     public void test_hello_with_empty_string_is_compared_by_value() {
-        assertThat(HelloWorld.hello(new String())).isEqualTo("Hello, World!");
+        assertEquals("Hello, World!", HelloWorld.hello(new String()));
     }
 
-    @Ignore
+    @Disabled
     @Test
     public void test_hello_with_no_name_should_return_helloworld() {
-        assertThat(HelloWorld.hello(null)).isEqualTo("Hello, World!");
+        assertEquals("Hello, World!", HelloWorld.hello(null));
     }
    
-    @Ignore
+    @Disabled
     @Test
     public void test_hello_should_return_hello_alice_when_alice() {
-        assertThat(HelloWorld.hello("Alice")).isEqualTo("Hello, Alice!");
+        assertEquals("Hello, Alice!", HelloWorld.hello("Alice"));
     }
 
-    @Ignore
+    @Disabled
     @Test
     public void test_hello_should_return_hello_bob_when_bob() {
-        assertThat(HelloWorld.hello("Bob")).isEqualTo("Hello, Bob!");
+        assertEquals("Hello, Bob!", HelloWorld.hello("Bob"));
     }
 }
