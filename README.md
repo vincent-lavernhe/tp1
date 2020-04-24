@@ -3,8 +3,9 @@
 ### IUT d’Aix-Marseille – Département Informatique Aix-en-Provence
 
 * **Cours:** [M2105](http://cache.media.enseignementsup-recherche.gouv.fr/file/25/09/7/PPN_INFORMATIQUE_256097.pdf)
-* **Responsable:** [Sébastien NEDJAR](mailto:sebastien.nedjar@univ-amu.fr)
-* **Enseignants:** [Sébastien NEDJAR](mailto:sebastien.nedjar@univ-amu.fr), [Cyril Pain-Barre](mailto:cyril.pain-barre@univ-amu.fr)
+* **Responsable intérimaire:** [Cyril Pain-Barre](mailto:cyril.pain-barre@univ-amu.fr)
+* **Responsable habituel:** [Sébastien NEDJAR](mailto:sebastien.nedjar@univ-amu.fr)
+* **Enseignants actuels:** [Sophie Nabitz](mailto:sophie.nabitz@univ-avignon.fr), [Cyril Pain-Barre](mailto:cyril.pain-barre@univ-amu.fr)
 * **Besoin d'aide ?**
     * La page [Piazza de ce cours](https://piazza.com/univ-amu.fr/spring2017/m2105/home).
     * Consulter et/ou créér des [issues](https://github.com/IUTInfoAix-M2105/tp1/issues).
@@ -52,13 +53,17 @@ votre taux d'accomplissement du TP.
 
 #### Lancement de l'IDE
 
-Allez dans le Menu 'Application' et ouvrir 'IntelliJ IDEA' dans la section programmation.
+Allez dans le Menu 'Application' puis 'Programmation' et ouvrir 'IntelliJ IDEA Ultimate Edition'.
 
+<!--
 Après le chargement, vous devriez tomber sur une première fenêtre vous proposant d'importer vos paramètres.
 
 ![](src/main/resources/assets/complete_installation.png)
 
-Laissez sur 'Do not import settings' et cliquez sur 'OK'. À partir de là vous allez personnaliser votre installation 
+Laissez sur 'Do not import settings' et cliquez sur 'OK'. 
+-->
+
+À partir de là vous allez personnaliser votre installation 
 pour qu'elle corresponde à vos besoins.
 
 Sur la première fenêtre de personnalisation, vous devez choisir l’apparence de votre IDE. Ici rien de fondamental, vous 
@@ -112,7 +117,7 @@ la fenêtre de connexion à GitHub.
 
 ![](src/main/resources/assets/login_to_github1.png)
 
-Renseignez votre nom d'utilisateur github et son mot de passe. Cela va générer un token GitHub qui vous authentifiera désormais sur GitHub depuis IntelliJ IDEA.
+Renseignez votre nom d'utilisateur GitHub et son mot de passe. Cela va générer un token sur votre compte GitHub qui vous authentifiera désormais sur GitHub depuis IntelliJ IDEA. Vous recevrez probablement un mail de la part de GitHub pour vous en informer.
 
 ![](src/main/resources/assets/login_to_github2.png)
 
@@ -129,22 +134,28 @@ Après avoir cliquer sur 'Clone', le clonage du TP1 commence.
 
 *ItelliJ IDEA* devrait détecter que votre projet possède un fichier `pom.xml`, et importer toutes les dépendances du projet. Cela peut prendre un peu de temps. 
 
-![](src/main/resources/assets/checkout_repository.png)
-
 #### Découverte de l'IDE
 Lorsque vous ouvrez votre projet, vous arrivez sur une fenêtre comme celle-ci :
 
-![](src/main/resources/assets/fenetre_principale_idea1.png)
+![](src/main/resources/assets/interface_idea.png)
 
-Cliquez sur l’icône en bas à gauche et sélectionnez 'Project' pour avoir la vue de votre projet
+où la vue projet devrait être déjà développée et le (ce !) fichier `README.md` affiché.
 
-![](src/main/resources/assets/fenetre_principale_idea2.png)
+Si ce n'est pas le cas, passer la souris sur l’icône représentant une carré en bas à gauche et sélectionnez 'Project' pour avoir la vue de votre projet.
 
 Dans cette vue, vous pouvez voir les différents dossiers de votre projet. Pour le TP, vous travaillerez 
 principalement dans deux d'entre eux : 
 
 - `src/main/java/fr/univ_amu/iut/` : Qui contiendra l'ensemble du code applicatif (le code des exercices).
 - `src/test/java/fr/univ_amu/iut/` : Qui contient les classes de test associées (le code vous aidant à vérifier votre solution).
+
+En principe, tout est déjà paramétré pour fonctionner avec le JDK (Java Development Kit) OpenJDK-11. 
+Il ne devrait pas être nécessaire de modifier les paramètres du projet ou d'IDEA pour exécuter la classe principale `App.java` qui devrait apparaître avec un triangle vert, indiquant qu'on peut l'exécuter. Pour ce faire, dans la vue 'Project' effectuez un clic droit sur `App` et choisir Run 'App.main()'.
+
+En bas de la fenêtre, vous devriez voir le résultat de l'exécution de cette classe sur la console d'exécution :
+
+![](src/main/resources/assets/run_App.png)
+
 
 La première fois que vous lancez IntelliJ IDEA, il faut indiquer quel JDK utiliser. Pour ce faire, ouvrez n'importe quel 
 fichier Java de votre projet. En haut de l'éditeur, vous devriez avoir un bandeau jaune vous indiquant l'absence de JDK.
