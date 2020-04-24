@@ -158,15 +158,16 @@ En bas de la fenêtre, vous devriez voir le résultat de l'exécution de cette c
 
 #### En cas de complications
 
-Il se peut que tout ne se déroule pas comme prévu et que vous ne parvenez pas à exécuter `App`.
+Il se peut que tout ne se déroule pas comme prévu et que vous ne parveniez pas à exécuter `App`.
 
-Si le triangle vert n'apparaît pas sur le nom de cette classe, il se peut que le projet d'ait pas été correctement importé comme un projet maven (un outil de gestion du cycle de vie d'une application). Dans ce cas faire un clic droit sur le fichier `pom.xml` puis sélectionner 'Maven' puis 'Reimport' (ou 'Import as a maven project').
+Si le triangle vert n'apparaît pas sur le nom de cette classe, il se peut que le projet n'ait pas été correctement importé comme un projet maven (un outil de gestion du cycle de vie d'une application). Dans ce cas faire un clic droit sur le fichier `pom.xml` puis sélectionner 'Maven' puis 'Reimport' (ou 'Import as a maven project').
 
-Si ça ne règle pas le promblème, il se peut que IDEA ne trouve pas le JDK (SDK), ce qui ne devrait pas être le cas de la VM fournie. Aller dans le menu 'File' puis 'Project Structure' et :
-    + dans la partie 'Project SDK' de 'Project Settings', vérifiez que vous utilisez une version de développement java version 11 ou supérieure (le niveau de language est au minimum 8, mais 11 est aussi un bon choix)
-    ![](src/main/resources/assets/define_project_settings.png)
-    + dans la partie 'SDKs' de 'Platform Settings', 11 doit apparaître avec son JDK home path, sinon ajouter manuellement le JDK que vous avez installé :
-    ![](src/main/resources/assets/define_platform_settings.png)
+Si ça ne règle pas le problème, il se peut que IDEA ne trouve pas le JDK (SDK), ce qui ne devrait pas être le cas de la VM fournie. Aller dans le menu 'File' puis 'Project Structure' et :
+  - dans la partie 'Project SDK' de 'Project Settings', vérifiez que vous utilisez une version de développement java version 11 ou supérieure (le niveau de language est au minimum 8, mais 11 est aussi un bon choix)
+  ![](src/main/resources/assets/define_project_settings.png)
+
+  - dans la partie 'SDKs' de 'Platform Settings', 11 doit apparaître avec son JDK home path, sinon ajouter manuellement le JDK que vous avez installé :
+  ![](src/main/resources/assets/define_platform_settings.png)
 
 
 
