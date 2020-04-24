@@ -156,26 +156,19 @@ En bas de la fenêtre, vous devriez voir le résultat de l'exécution de cette c
 
 ![](src/main/resources/assets/run_App.png)
 
+#### En cas de complications
 
-La première fois que vous lancez IntelliJ IDEA, il faut indiquer quel JDK utiliser. Pour ce faire, ouvrez n'importe quel 
-fichier Java de votre projet. En haut de l'éditeur, vous devriez avoir un bandeau jaune vous indiquant l'absence de JDK.
+Il se peut que tout ne se déroule pas comme prévu et que vous ne parvenez pas à exécuter `App`.
 
-![](src/main/resources/assets/define_project_jdk.png)
+Si le triangle vert n'apparaît pas sur le nom de cette classe, il se peut que le projet d'ait pas été correctement importé comme un projet maven (un outil de gestion du cycle de vie d'une application). Dans ce cas faire un clic droit sur le fichier `pom.xml` puis sélectionner 'Maven' puis 'Reimport' (ou 'Import as a maven project').
 
-Cliquez sur `Setup SDK` pour choisir le JDK à utiliser.
+Si ça ne règle pas le promblème, il se peut que IDEA ne trouve pas le JDK (SDK), ce qui ne devrait pas être le cas de la VM fournie. Aller dans le menu 'File' puis 'Project Structure' et :
+    + dans la partie 'Project SDK' de 'Project Settings', vérifiez que vous utilisez une version de développement java version 11 ou supérieure (le niveau de language est au minimum 8, mais 11 est aussi un bon choix)
+    ![](src/main/resources/assets/define_project_settings.png)
+    + dans la partie 'SDKs' de 'Platform Settings', 11 doit apparaître avec son JDK home path, sinon ajouter manuellement le JDK que vous avez installé :
+    ![](src/main/resources/assets/define_platform_settings.png)
 
-![](src/main/resources/assets/select_project_sdk.png)
 
-Cliquez sur `Configure ...` puis sur l'écran suivant cliquer sur le plus vert en haut à gauche :
-
-![](src/main/resources/assets/configure_sdk.png)
-
-Choisir le dossier contenant Java 8 :
-
-![](src/main/resources/assets/select_home_directory_for_jdk.png)
-
-Validez trois fois jusqu'à revenir à l'éditeur. Maintenant votre projet est complètement configuré vous allez pouvoir 
-commencer à prendre en main l'IDE.
 
 ### Workflow
 
