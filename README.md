@@ -29,18 +29,18 @@ problèmes de prise en main de votre IDE.
 IntelliJ IDEA possède deux versions, la première dite *'communautaire'* est totalement open source et peut être utilisée 
 gratuitement par n'importe qui et la seconde dite *'ultimate'* qui est plus riche en fonctionnalité et qui n'est pas 
 gratuite pour les individus lambda. Par chance, en tant qu'étudiant dans une université française, vous avez la 
-possibilité de pouvoir bénéficier d'une licence pour tous les produits JetBrains. Pour bénéficier de cette remise, il 
-vous suffit de remplir [ce formulaire](https://www.jetbrains.com/shop/eform/students).
+possibilité de pouvoir bénéficier d'une licence pour tous les produits JetBrains. En l'occurrence, puisque la version installée sur la VM est la version Ultimate 2020.1, il vous faudra acquérir (gratuitement) une licence en remplissant [ce formulaire](https://www.jetbrains.com/shop/eform/students).
 
 Quelques minutes après, vous recevrez un email de confirmation suivi d'un second email d'activation ou vous devrez accepter 
 les conditions d'utilisation et choisir un nom d'utilisateur et un mot de passe. Conservez précieusement ces 
 informations dans un coin identifié de votre cerveau car c'est grâce à elle que vous pourrez importer votre licence 
-chez vous et dans les salles de TP.
+sur d'autres produits JetBrains.
 
 #### Création de votre fork du TP1
 
-Maintenant que vous connaissez les bases de Git, vous allez pouvoir commencer à travailler sur vos TP. Comme vous allez 
-le découvrir le rendu, l'évaluation et le suivi de votre travail passeront par GitHub. La première chose que vous allez 
+Vous connaissez déjà les bases de Git. Si ce n'est pas le cas, il vous faudra réaliser le [TP Git](https://github.com/IUTInfoAix-M2103/tp1) ! 
+Elles vous seront utiles pour commencer à travailler sur vos TP. Comme vous allez 
+le découvrir le rendu, l'évaluation (éventuelle) et le suivi de votre travail passeront par GitHub. La première chose que vous allez 
 donc faire est de créer un fork d'un dépôt. Pour ce faire, rendez-vous sur le lien suivant : 
 
 [https://classroom.github.com/assignment-invitations/be2e508aa8f5fd632d0a9f2c30e3aaba](https://classroom.github.com/assignment-invitations/be2e508aa8f5fd632d0a9f2c30e3aaba) 
@@ -66,31 +66,35 @@ pouvez choisir l'option que vous voulez.
 
 ![](src/main/resources/assets/customize_intellij_idea1.png)
 
-Les deux écrans suivants sont plutôt destinés à une installation sur une machine personnelle. À l'IUT vous pouvez laisser 
+Les deux écrans suivants sont plutôt destinés à une installation sur une machine personnelle. Sur la VM vous pouvez laisser 
 les options par défaut et passer à la suite.
 
 ![](src/main/resources/assets/customize_intellij_idea2.png)
 ![](src/main/resources/assets/customize_intellij_idea3.png)
 
-Les deux écrans suivants vous permettent de choisir les plugins que vous allez activer. De manière générale, il vaut 
+Un premier écran permet de choisir des plugins que vous allez activer. De manière générale, il vaut 
 mieux en activer le moins possible pour éviter les mauvaises surprises.
 
 ![](src/main/resources/assets/customize_intellij_idea4.png)
-![](src/main/resources/assets/customize_intellij_idea5.png)
 
-Voici la configuration que je vous conseille :
+Voici la configuration que l'on vous conseille :
 - **Java Framworks :** Aucun
 - **Build Tools :** Maven
-- **Web Development :** Tous
-- **Versions Controls :** Git et Github
+- **JavaScript Development :** Tous
+- **Version Controls :** Git et Github
 - **Test Tools :** Tous
 - **Application Servers :** Aucun
-- **Clouds :** Aucun
-- **UI Designer :** Activé
+- **Swing :** Activé
 - **Android :** Désactivé
-- **Database Tools :** Choix par défaut
+- **Database Tools :** Désactivé
 - **Other Tools :** Tous
 - **Plugin Development :** Désactivé
+
+L'écran qui suit permet d'installer des plugins additionnels.
+
+![](src/main/resources/assets/customize_intellij_idea5.png)
+
+Aucun ne sera nécessaire (bien que EduTools n'est sûrement pas dénué d'intérêt...).
 
 Il ne reste plus qu'à saisir vos données de connexion pour terminer le paramétrage de votre IDE.
 
@@ -103,28 +107,27 @@ l'IDE.
 
 ![](src/main/resources/assets/welcome.png)
 
-Pour ce faire cliquez sur 'Check out from Version Control' puis sur 'GitHub'. Vous allez arriver sur 
+Pour ce faire cliquez sur 'Get from Version Control' puis sur 'GitHub'. Vous allez arriver sur 
 la fenêtre de connexion à GitHub.
 
 ![](src/main/resources/assets/login_to_github1.png)
 
-Cliquez sur 'Create API Token' et sur la fenêtre suivante entrez vos identifiants GitHub et cliquez sur 'Login'. 
+Renseignez votre nom d'utilisateur github et son mot de passe. Cela va générer un token GitHub qui vous authentifiera désormais sur GitHub depuis IntelliJ IDEA.
 
 ![](src/main/resources/assets/login_to_github2.png)
 
-Vous revenez sur la fenêtre précédente où vous pouvez aussi cliquer sur 'Login'.
+La liste de vos dépôts GitHub devrait appaître. Ici sélectionnez votre fork du TP1 qui devrait avoir un nom de la 
+forme 'IUTInfoAix-m2105/tp1-votreUsername'. Mémorisez bien le dossier dans lequel vous clonez votre projet. Vous aurez besoin d'y accéder par la suite en ligne de commande pour soumettre vos changement et les pousser en ligne.
 
-![](src/main/resources/assets/login_to_github3.png)
-
-
-À partir de là, vous voyez apparaître la fenêtre 'Clone Repository' dans laquelle vous allez pouvoir choisir le dépôt 
-distant que vous allez cloner et ouvrir. Ici sélectionnez votre fork du TP1 qui devrait avoir un nom de la 
-forme 'IUTInfoAix-m2105/tp1-votreUsername'. Mémorisez bien le dossier dans lequel vous clonez votre projet. Vous aurez besoin d'y accéder par la suite en ligne de commande pour soumettre vos changement et les pousser en ligne. 
+En cas de difficulté à retrouver votre fork du TP, vous pouvez simplement en indiquer l'URL dans la barre du haut. Cette URL est celle obtenue sur le site GitHub du dépôt en cliquant sur 'Clone or download' (le bouton vert à droite) et en choisissant 'Clone with HTTPS'.
 
 ![](src/main/resources/assets/clone_repository.png)
 
-*ItelliJ IDEA* va détecter que votre projet possède un fichier `pom.xml`, il vous suffit de cliquer sur 'Yes' pour 
-terminer l'import de votre projet et commencer à travailler. 
+Après avoir cliquer sur 'Clone', le clonage du TP1 commence.
+
+![](src/main/resources/assets/cloning_repository.png)
+
+*ItelliJ IDEA* devrait détecter que votre projet possède un fichier `pom.xml`, et importer toutes les dépendances du projet. Cela peut prendre un peu de temps. 
 
 ![](src/main/resources/assets/checkout_repository.png)
 
