@@ -485,7 +485,7 @@ mots fizz et buzz : "Fizz" correspond aux multiples de "3" et "Buzz" aux multipl
 
 **Déroulement du jeu** : Les enfants sont organisés en cercle. Vous désignez un premier enfant qui prononce le chiffre 
 "un" à voix haute. Son voisin de gauche poursuit en prononçant le chiffre "deux". On continue ainsi jusqu’à ce que l’on 
-arrive à un nombre multiple de 3 ou de 5. Le premier piège se situe donc au chiffre 3. L’enfant à qui c’est le tour, 
+arrive à un nombre multiple de 3 ou de 5. Le premier piège se situe donc au chiffre 3. L’enfant dont c’est le tour, 
 devra donc dire "fizz" et non "trois".
 
 Voici un exemple de série détaillée jusqu’à 20 :
@@ -495,11 +495,29 @@ Voici un exemple de série détaillée jusqu’à 20 :
 Un enfant qui se trompe deux fois est éliminé.
 
 #### L'objectif de cet exercice est :
-- Implémentez une classe `FizzBuzzer` qui vous permettra de générer toute la série 'FizzBuzz' jusqu'à une valeur 
+- d'implémenter une classe `FizzBuzzer` qui vous permettra de générer toute la série 'FizzBuzz' jusqu'à une valeur 
 passée en paramètre. 
 
-Comme pour l'exercice précédent, vous devez activer les tests les un après les autres et soumettre votre solution après 
+Comme pour l'exercice précédent, vous devez activer les tests les uns après les autres et soumettre votre solution après 
 chaque itération du cycle principal du workflow.
+
+Pas à pas :
+- activez le premier test qui appelle la méthode computeString avec la valeur 1 fournie en paramètre, implémentez la méthode avec une valeur de retour 0, testez : le test échoue (RED)
+- implémentez maintenant la méthode pour qu'elle retourne 1, testez : le test réussit (GREEN)
+- refaites les deux précédentes étapes avec le second test (RED puis GREEN)
+- à ce niveau votre implémentation doit contenir un if, et vous devez remarquer que les deux "return" font la même chose, vous pouvez donc améliorer votre code pour qu'il retourne la chaîne résultat d'une conversion. C'est le premier REFACTOR.
+- activez ensuite le test pour 3 (attention pas modulo 3), implémentez avec une valeur de retour fausse, puis une valeur de retour juste,
+- vérifiez que votre code fonctionne en activant le test pour 4,
+- activez ensuite le test pour 5 (attention pas modulo 5), implémentez la méthode (un if doit suffire),
+- ajoutez maintenant au début de votre méthode la ligne suivante : `if (i==5) return "0";`, constatez et corrigez,
+- activez ensuite le test pour 6 (attention pas modulo 3), implémentez avec une valeur de retour fausse, puis une valeur de retour juste,
+- à ce niveau vous devez remarquer que vous avez deux fois la même ligne de code (return Fizz). Comme le code ne doit jamais être dupliqué (principe de base en conception), c'est le moment de refactorer.
+- vérifiez que votre code fonctionne en activant le test pour 9,
+- activez ensuite le test pour 10, implémentez avec une valeur de retour fausse, puis la valeur de retour juste,
+- activez ensuite le test pour 15, qui doit d'abord échouer (sans aucune intervention), et ensuite écrivez le code correct.
+- vérifiez pour 0.
+- pour l'implémentation de la seconde fonction, conservez le même principe : vous pouvez commentez les lignes 79 à 82 pour continuer à implémenter suivant ce principe incrémental. 
+- le dernier test est uniquement un test de vérification, vous ne devriez rien avoir à implémenter de plus.
 
 
 ### Exercice 3 : Convertisseur de nombre romain
@@ -529,12 +547,14 @@ Les nombres romains sont majoritairement représentés selon les principes suiva
 - Les symboles sont groupés par ordre décroissant, sauf pour les valeurs à retrancher selon la règle précédente 
 (ex. : 1030 s'écrit MXXX et non XXXM qui est une des façons de représenter 970).
 
-Dans cet exercice, vous allez pour la première fois, manipuler la classe [`String`](https://docs.oracle.com/javase/8/docs/api/?java/lang/String.html). Cette classe possède de nombreuses méthodes utilitaires pour manipuler facilement les chaines de caractères. Prennez un peu de temps pour survoler la documentation avant de commencer la résolution de cet exercice. Ici, vous utiliserez principalement une boucle `for` et la méthode `charAt(i)` qui retourne le i-ème caractère d'une chaine.
+Dans cet exercice, vous allez pour la première fois, manipuler la classe [`String`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html). Cette classe possède de nombreuses méthodes utilitaires pour manipuler facilement les chaines de caractères. Prennez un peu de temps pour survoler la documentation avant de commencer la résolution de cet exercice. Ici, vous utiliserez principalement une boucle `for` et la méthode `charAt(i)` qui retourne le i-ème caractère d'une chaine.
 
 Faites très attention pour cet exercice de bien respecter le principe du TDD en ajoutant vraiment tout le temps la quantité minimale de code nécessaire à la validation des tests. Si vous suivez cette règle, il se résout très facilement alors qu'en l'abordant de manière générale, il comporte de nombreux pièges pouvant vous faire perdre un temps précieux.
 
-Comme pour l'exercice précédent, vous devez activer les tests les un après les autres et soumettre votre solution après 
+Comme pour l'exercice précédent, vous devez activer les tests les uns après les autres et soumettre votre solution après 
 chaque itération du cycle principal du workflow.
+Après le troisième test, vous pouvez refactorer en utilisant un switch. Ensuite, vous ajouterez les tests nécessaires pour les symboles L, C, D et M.
+A la fin de l'implémentation de tous les symboles de base, vous pouvez refactorer le switch en utilisant l'IDE qui vous propose "Extract method", que vous nommerez correctement, l'idée étant de proposer un code facile à relire.
 
 
 ### Exercice 4 : Simulateur de robot
@@ -597,8 +617,9 @@ implémentant `List`... Dans les exercices qui suivent, nous choisirons `ArrayLi
 - Écrire une classe `RobotSimulator` qui permet de passer une chaine d'instructions à un robot et de piloter le 
   fonctionnement du robot en fonction d'une séquence d'instructions passées en paramètre.
   
-Comme pour l'exercice précédent, vous devez activer les tests les un après les autres et soumettre votre solution après 
+Comme pour l'exercice précédent, vous devez activer les tests les uns après les autres et soumettre votre solution après 
 chaque itération du cycle principal du workflow.
+
 
 ### Exercice 5 : Démineur
 
@@ -647,7 +668,7 @@ En ceci :
 - Ecrire la classe `MinesweeperBoard` qui pour un tableau d'entrée avec les mines vous permettent de calculer le tableau 
 avec les nombres.
 
-Comme pour l'exercice précédent, vous devez activer les tests les un après les autres et soumettre votre solution après 
+Comme pour l'exercice précédent, vous devez activer les tests les uns après les autres et soumettre votre solution après 
 chaque itération du cycle principal du workflow.
 
 ### Exercice 6 : Gestion des arguments de la ligne de commande
@@ -747,6 +768,6 @@ inutile d'aller plus loin que le test `testSpacesInFormat`.
 - Modifiez la classe `App` pour quelle utilise votre classe `Arg` pour gérer la ligne de commande suivant un schéma que 
 vous aurez choisi. 
 
-Comme pour l'exercice précédent, vous devez activer les tests les un après les autres et soumettre votre solution après 
+Comme pour l'exercice précédent, vous devez activer les tests les uns après les autres et soumettre votre solution après 
 chaque itération du cycle principal du workflow.
 
