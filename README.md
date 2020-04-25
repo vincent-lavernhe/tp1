@@ -210,7 +210,7 @@ quatre
 
 #### En cas de complications
 
-Il se peut que tout ne se déroule pas comme prévu et que vous ne parveniez pas à exécuter `App`.
+Il se peut que tout ne se déroule pas comme prévu et que vous ne parveniez pas à exécuter `App`, en particulier si vous utilisez votre propre installation.
 
 Si le triangle vert n'apparaît pas sur le nom de cette classe, il se peut que le projet n'ait pas été correctement importé comme un projet maven (un outil de gestion du cycle de vie d'une application). Dans ce cas faire un clic droit sur le fichier `pom.xml` puis sélectionner 'Maven' puis 'Reimport' (ou 'Import as a maven project').
 
@@ -223,25 +223,33 @@ Si ça ne règle pas le problème, il se peut que IDEA ne trouve pas le JDK (SDK
 
 
 
-### Workflow
+### Mode opératoire du TP (Workflow)
 
+<!--
 Maintenant que vous savez utiliser Git en ligne de commande, que vous avez forké, importé et ouvert le TP dans votre IDE, 
-vous êtes en capacité de travailler sur vos exercices. Pour vous faire découvrir le Test Driven Development (TDD), nous 
-allons vous proposer de suivre un workflow particulier pour résoudre vos exercices progressivement et en consolidant 
-progressivement un filet de sécurité qui vérifiera que votre code continue à bien faire ce qu'il doit.
+vous êtes en capacité de travailler sur vos exercices. 
+-->
+
+Ce TP est conçu pour vous faire découvrir le **Test Driven Development (TDD)**, c'est à dire le développement conduit par les tests.
 
 Le TDD est une méthode de conception émergente c'est-à-dire que la conception apparaît au fur et à mesure du 
-développement en encourageant une meilleure compréhension du problème en commençant à écrire les tests avant le code 
-applicatif. Pour le développeur, les tests vont constituer une spécification technique exécutable et vérifiable à tout 
+développement en encourageant une meilleure compréhension du problème **en commençant à écrire les tests avant le code 
+applicatif**. Pour le développeur, les tests vont constituer une spécification technique exécutable et vérifiable à tout 
 moment. Ainsi en rajoutant des tests, le développeur converge progressivement à la fois vers une spécification plus fine 
 et un code fonctionnel associé.
 
-Le workflow du TDD est souvent décrit par le triptyque "RED, GREEN, REFACTOR".
+Le workflow du TDD est souvent décrit par le triptyque "RED, GREEN, REFACTOR" (figure empruntée au site [ministryoftesting](https://www.ministryoftesting.com) :
 
-![](https://www.ministryoftesting.com/wp-content/uploads/2014/08/graphic_1.jpg.png)
+![](src/main/resources/assets/graphic_tdd.png)
 
-Le workflow que vous allez devoir suivre va reprendre la même structure, mis à part qu'au début, les tests vous sont 
+Nous vous proposons de suivre ce workflow particulier pour résoudre vos exercices progressivement et en consolidant 
+progressivement un filet de sécurité qui vérifiera que votre code continue à bien faire ce qu'il doit.
+Pour vous faciliter la tâche, les tests vous sont 
 donnés pour vous faire découvrir cette méthode sans trop de douleur.
+
+#### Exécution d'un test
+
+Avant de vous présenter plus précisément ce que vous devez réaliser, commençons par exécuter le test de notre classe témoin.
 
 #### Étapes du cycle principal
 
