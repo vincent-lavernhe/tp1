@@ -149,9 +149,66 @@ principalement dans deux d'entre eux :
 - `src/main/java/fr/univ_amu/iut/` : Qui contiendra l'ensemble du code applicatif (le code des exercices).
 - `src/test/java/fr/univ_amu/iut/` : Qui contient les classes de test associées (le code vous aidant à vérifier votre solution).
 
+Notez qu'IDEA regroupe sur l'interface `fr/univ_amu/iut` en `fr.univ_amu.iut` car les répertoires `fr` et `univ_amu` ne contiennent qu'un seul élément. Vous pouvez utiliser un terminal ou l'explorateur de fichiers du système (nautilus) pour explorer plus en détail l'arborescence de votre projet :
+
+```
+~/IdeaProjects$ tree tp1-bashelier/ -I 'target*|resources*'
+tp1-bashelier/
+├── pom.xml
+├── README.md
+├── src
+│   ├── main
+│   │   └── java
+│   │       ├── fr
+│   │       │   └── univ_amu
+│   │       │       └── iut
+│   │       │           ├── App.java
+│   │       │           ├── exercice1
+│   │       │           │   └── HelloWorld.java
+│   │       │           ├── exercice2
+│   │       │           │   └── FizzBuzzer.java
+│   │       │           ├── exercice3
+│   │       │           │   └── ConvertisseurDeNombreRomain.java
+│   │       │           ├── exercice4
+│   │       │           │   ├── GridPosition.java
+│   │       │           │   ├── Movement.java
+│   │       │           │   ├── Orientation.java
+│   │       │           │   ├── Robot.java
+│   │       │           │   └── RobotSimulator.java
+│   │       │           ├── exercice5
+│   │       │           │   └── MinesweeperBoard.java
+│   │       │           └── exercice6
+│   │       │               ├── ArgsException.java
+│   │       │               ├── Args.java
+│   │       │               └── ArgsMain.java
+│   │       └── module-info.java
+│   └── test
+│       └── java
+│           └── fr
+│               └── univ_amu
+│                   └── iut
+│                       ├── AppTest.java
+│                       ├── exercice1
+│                       │   └── HelloWorldTest.java
+│                       ├── exercice2
+│                       │   └── FizzBuzzTest.java
+│                       ├── exercice3
+│                       │   └── ConvertisseurDeNombreRomainTest.java
+│                       ├── exercice4
+│                       │   └── RobotTest.java
+│                       ├── exercice5
+│                       │   └── MinesweeperBoardTest.java
+│                       └── exercice6
+│                           ├── ArgsExceptionTest.java
+│                           └── ArgsTest.java
+└── tp1.iml
+
+23 directories, 25 files
+```
+
 #### Exécution de la classe App
 
-Cette classe principale `App` du package `fr.univ_amu.iut` n'est qu'une classe "témoin" pour s'assurer que tout fonctionne normalement. Observez son code :
+Cette classe principale `App` du package `fr.univ_amu.iut` n'est qu'une classe "témoin" pour s'assurer que tout fonctionne normalement. Ouvrez la dans IDEA et observez son code :
 
 ```java
 package fr.univ_amu.iut;
@@ -187,7 +244,7 @@ On retrouve :
   - une nouvelle instruction `System.out.println()` qui affiche l'élément courant
 
 En principe, le système et l'IDE sont prêts à fonctionner avec le JDK (Java Development Kit) OpenJDK-11. 
-Il ne devrait pas être nécessaire de modifier les paramètres du projet ou d'IDEA pour exécuter la classe principale `App.java` qui devrait apparaître avec un triangle vert, indiquant qu'on peut l'exécuter. Pour ce faire, dans la vue 'Project' effectuez un clic droit sur `App` et choisir Run 'App.main()'.
+Il ne devrait pas être nécessaire de modifier les paramètres du projet ou d'IDEA pour exécuter la classe principale `App.java` qui devrait apparaître avec l'icône ![Icône classe exécutable](src/main/resources/assets/idea_executable_class.png) (icône de classe avec triangle vert) indiquant qu'on peut l'exécuter. Pour ce faire, dans la vue 'Project' effectuez un clic droit sur `App` et choisir Run 'App.main()'.
 
 En bas de la fenêtre, vous devriez voir le résultat de l'exécution de cette classe sur la console d'exécution :
 
@@ -247,9 +304,29 @@ progressivement un filet de sécurité qui vérifiera que votre code continue à
 Pour vous faciliter la tâche, les tests vous sont 
 donnés pour vous faire découvrir cette méthode sans trop de douleur.
 
-#### Exécution d'un test
+#### Première exécution d'un test
 
-Avant de vous présenter plus précisément ce que vous devez réaliser, commençons par exécuter le test de notre classe témoin.
+Avant de vous présenter plus précisément ce que vous devez réaliser dans le contexte du TDD, commençons par exécuter un premier test, presqu'aussi inutile que notre classe App car il est censé ne jamais échouer, mais nous permettant de vérifier que les tests aussi sont fonctionnels.
+
+Ouvrez le fichier `AppTest.java`, présent dans `src/test/java/fr/univ_amu/iut` de notre classe témoin :
+
+![](src/main/resources/assets/app_test.png)
+
+Il contient un seul test `testApp()` qui s'assure que `true` est toujours vrai...
+La classe AppTest devrait être reconnue comme une classe de tests unitaires et apparaître avec l'icône ![Icône classe de test](src/main/resources/assets/idea_test_class.png) ajoutant un triangle rouge à celle des classes exécutables.
+
+Pour exécuter ce test, utiliser l'icône vert ![run test](src/main/resources/assets/idea_run_single_test.png) (éventuellement ![mark method test passed](src/main/resources/assets/idea_test_method_mark_passed.png) ou ![mark method test failed](src/main/resources/assets/idea_test_method_mark_failed.png, voir ci-après) dans la marge à gauche du code de la méthode, et sélectionner Run 'testApp()'. En bas de la fenêtre devrait s'afficher le résultat du test passé avec succès avec une marque verte ![test passed image](src/main/resources/assets/idea_test_passed.png) :
+
+![test passed](src/main/resources/assets/test_passed.png)
+
+Et dans la marge du code de la méthode testApp() l'icône devrait apparaître avec l'icône ![mark method test passed](src/main/resources/assets/idea_test_method_mark_passed.png).
+
+Quand une classe de test possède plusieurs méthodes de test, on peut les exécuter tous en cliquant sur l'icône ![run test class image](src/main/resources/assets/run_tests_class.png) puis en choisissant d'exécuter la classe entière.
+
+Si un test échoue, son résultat sera écrit en rouge avec le marqueur ![run test failed](src/main/resources/assets/idea_test_failed.png) et la marge du code de la méthode correspondante aura l'icône ![mark method test failed](src/main/resources/assets/idea_test_method_mark_failed.png).
+
+Enfin, certains tests peuvent être momentanément désactivés car leur méthode est préfixée de l'annotation `@Disabled`. Dans ce cas, le test est ignoré et apparaît avec la marque ![run test ignored](src/main/resources/assets/idea_test_ignored.png).
+Pour activer le test, il faut mette en commentaire l'annotation `@Disabled` ou la supprimer.
 
 #### Étapes du cycle principal
 
