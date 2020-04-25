@@ -39,8 +39,9 @@ public class FizzBuzzTest {
     @Disabled
     @Test
     public void test_computeString_Should_Return_Buzz_when_5() {
+        String buzz = "Buzz";
         String resultat = fizzBuzz.computeString(5);
-        assertEquals("Buzz", resultat);
+        assertEquals("Buzz", buzz);
     }
 
     @Disabled
