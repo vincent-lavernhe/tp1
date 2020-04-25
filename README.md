@@ -350,15 +350,15 @@ est terminé vous pouvez redémarrer le cycle avec un prochain test.
 À chaque fin de cycle, vous devez soumettre votre travail sur votre dépôt Git local et le pousser sur votre fork sur 
 GitHub. Vous terminez un exercice lorsque tous les tests y sont activés et passent sur votre dépôt distant.
 
-IntelliJ IDEA vous permet de "commiter" votre code et de le "pousser" sur GitHub directement depuis l'IDE, sans passer par la ligne de commande, soit via la partie 'Git' de la barre d'outils, soit par le menu 'VCS' puis 'Git'. Généralement l'action 'commit' vous propose d'écrire le commentaire du commit et une option 'Commit and Push...'.
+IntelliJ IDEA vous permet de "commiter" votre code et de le "pousser" sur GitHub directement depuis l'IDE, sans passer par la ligne de commande, soit via la partie 'Git' de la barre d'outils, soit par le menu 'VCS' puis 'Git'. Généralement l'action 'commit' vous propose d'écrire le commentaire du *commit*, ainsi qu'une option 'Commit and Push...'.
 
 #### Ligne de commandes
 
-La méthode recommandée pour réaliser ces TP soit de rester sur IDEA pour exécuter, tester et versionner votre travail. Néanmoins, l'architecture de votre projet repose sur l'outil **maven** pour lequel a été défini le fichier `pom.xml` à la racine du projet, et qui a permis à IntelliJ IDEA de l'analyser correctement.
+La méthode recommandée pour réaliser ces TP est de rester simplement sur IDEA pour exécuter, tester et versionner votre travail. Néanmoins, nous tenons à signaler que l'architecture de votre projet repose sur l'outil **maven** pour lequel a été défini le fichier `pom.xml` à la racine du projet, et qui a permis à IntelliJ IDEA de l'analyser correctement.
 
 Maven est un outil puissant permettant de gérer l'ensemble du cycle de vie d'une application : vérification, compilation, tests, packaging, installation, déploiement...
 
-Sans rentrer dans les détails, on peut exécuter la classe principale du TP via la ligne de commandes (ici en demandant de nettoyer et compiler le projet pluis d'exécuter la classe principale) :
+Sans rentrer dans les détails, on peut exécuter la classe principale du TP via la ligne de commandes. La commande ci-dessous demande de nettoyer (`clean`) puis compiler le projet (`compile`), puis d'exécuter la classe principale (`exec:java`) :
 
 ```
 ~/IdeaProjects/tp1-bashelier$ mvn clean compile exec:java
