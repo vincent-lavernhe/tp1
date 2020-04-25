@@ -306,7 +306,7 @@ donnés pour vous faire découvrir cette méthode sans trop de douleur.
 
 #### Première exécution d'un test
 
-Avant de vous présenter plus précisément ce que vous devez réaliser dans le contexte du TDD, commençons par exécuter un premier test, presqu'aussi inutile que notre classe App car il est censé ne jamais échouer, mais nous permettant de vérifier que les tests aussi sont fonctionnels.
+Avant de vous présenter plus précisément ce que vous devez réaliser dans le contexte du TDD, commençons par exécuter un premier test, presqu'aussi inutile que notre classe `App` car il est censé ne jamais échouer, mais nous permettant de vérifier que les tests aussi sont fonctionnels.
 
 Ouvrez le fichier `AppTest.java`, présent dans `src/test/java/fr/univ_amu/iut` de notre classe témoin :
 
@@ -315,23 +315,27 @@ Ouvrez le fichier `AppTest.java`, présent dans `src/test/java/fr/univ_amu/iut` 
 Il contient un seul test `testApp()` qui s'assure que `true` est toujours vrai...
 La classe AppTest devrait être reconnue comme une classe de tests unitaires et apparaître avec l'icône ![Icône classe de test](src/main/resources/assets/idea_test_class.png) ajoutant un triangle rouge à celle des classes exécutables.
 
-Pour exécuter ce test, utiliser l'icône vert ![run test](src/main/resources/assets/idea_run_single_test.png) (éventuellement ![mark method test passed](src/main/resources/assets/idea_test_method_mark_passed.png) ou ![mark method test failed](src/main/resources/assets/idea_test_method_mark_failed.png, voir ci-après) dans la marge à gauche du code de la méthode, et sélectionner Run 'testApp()'. En bas de la fenêtre devrait s'afficher le résultat du test passé avec succès avec une marque verte ![test passed image](src/main/resources/assets/idea_test_passed.png) :
+Pour exécuter ce test, utiliser l'icône vert ![run test](src/main/resources/assets/idea_run_single_test.png) (ou comme ici  ![mark method test passed](src/main/resources/assets/idea_test_method_mark_passed.png) ou encore ![mark method test failed](src/main/resources/assets/idea_test_method_mark_failed.png), voir ci-après) dans la marge à gauche du code de la méthode, et sélectionner Run 'testApp()'. En bas de la fenêtre devrait s'afficher le résultat du test passé avec succès avec une marque verte ![test passed image](src/main/resources/assets/idea_test_passed.png) :
 
 ![test passed](src/main/resources/assets/test_passed.png)
 
-Et dans la marge du code de la méthode testApp() l'icône devrait apparaître avec l'icône ![mark method test passed](src/main/resources/assets/idea_test_method_mark_passed.png).
+Et dans la marge du code de la méthode `testApp()` l'icône devrait apparaître avec l'icône ![mark method test passed](src/main/resources/assets/idea_test_method_mark_passed.png).
 
-Quand une classe de test possède plusieurs méthodes de test, on peut les exécuter tous en cliquant sur l'icône ![run test class image](src/main/resources/assets/run_tests_class.png) puis en choisissant d'exécuter la classe entière.
+Quand une classe de test possède plusieurs méthodes de test, on peut les exécuter tous en cliquant sur l'icône ![run test class image](src/main/resources/assets/idea_run_tests_class.png) puis en choisissant d'exécuter la classe entière.
 
-Si un test échoue, son résultat sera écrit en rouge avec le marqueur ![run test failed](src/main/resources/assets/idea_test_failed.png) et la marge du code de la méthode correspondante aura l'icône ![mark method test failed](src/main/resources/assets/idea_test_method_mark_failed.png).
+Si un test échoue, son résultat sera écrit en rouge avec le marqueur ![run test failed](src/main/resources/assets/idea_test_failed.png) et la marge du code de la méthode correspondante aura l'icône ![mark method test failed](src/main/resources/assets/idea_test_method_mark_failed.png). Un double clic sur le test vous ramènera sur son code.
 
-Enfin, certains tests peuvent être momentanément désactivés car leur méthode est préfixée de l'annotation `@Disabled`. Dans ce cas, le test est ignoré et apparaît avec la marque ![run test ignored](src/main/resources/assets/idea_test_ignored.png).
+Certains tests peuvent être momentanément désactivés car leur méthode est préfixée de l'annotation `@Disabled`. Dans ce cas, le test est ignoré et apparaît avec la marque ![run test ignored](src/main/resources/assets/idea_test_ignored.png).
 Pour activer le test, il faut mette en commentaire l'annotation `@Disabled` ou la supprimer.
+
+Enfin, quand il existe plusieurs classes de test regroupées comme ici dans l'arborescence `src/test/java`, il est possible de faire exécuter la totalité de tous les tests (non désactivés) en faisant un clic droit sur le dossier java ![run all tests start point](src/main/resources/assets/idea_run_all_tests.png) et en choisissant Run 'All Tests'...
 
 #### Étapes du cycle principal
 
-1. **RED :** Dans cette étape, vous devez activer un test en enlevant le `@Ignore` devant la méthode de test (ou en la décommentant). Une fois 
-le test activé, vous devez le lancer pour vérifier qu'il échoue. Un test qui n'échoue jamais ne teste rien donc il ne 
+Au cours du TP, vous devrez donc opérer en TDD. Chaque exercice sera accompagné d'au moins une classe de test, dont tous les tests sont initialement désactivés. Pour réaliser l'exercice vous devrez suivre cycliquement les étapes suivantes (indiquées dans la figure précédente, illustrant le TDD) : 
+
+1. **RED :** Dans cette étape, vous devez activer un test en enlevant le `@Disabled` devant la méthode de test (ou en la décommentant). Une fois 
+le test activé, vous devez le lancer pour vérifier qu'il échoue. Un test qui n'échoue jamais (comme celui de `AppTest`) ne teste rien donc il ne 
 sert à rien.
 
 1. **GREEN :** Ici vous devez écrire le moins de code possible pour faire passer le test en question. Quand vous pensez 
@@ -346,62 +350,100 @@ est terminé vous pouvez redémarrer le cycle avec un prochain test.
 À chaque fin de cycle, vous devez soumettre votre travail sur votre dépôt Git local et le pousser sur votre fork sur 
 GitHub. Vous terminez un exercice lorsque tous les tests y sont activés et passent sur votre dépôt distant.
 
-#### Exécution des tests
+IntelliJ IDEA vous permet de "commiter" votre code et de le "pousser" sur GitHub directement depuis l'IDE, sans passer par la ligne de commande, soit via la partie 'Git' de la barre d'outils, soit par le menu 'VCS' puis 'Git'. Généralement l'action 'commit' vous propose d'écrire le commentaire du commit et une option 'Commit and Push...'.
 
-Pour exécuter vos tests, vous avez deux options, la première est d'utiliser l'IDE en ouvrant la classe de test et en 
-cliquant dans la marge de l'éditeur sur le bouton ![](src/main/resources/assets/executer_la_classe_de_test.png).
+#### Ligne de commandes
 
-Le résultat de l’exécution s'affiche en bas de la fenêtre de l'IDE. Les tests ayant réussi sont affiché en vert et ceux 
-ayant échoué sont en rouge. Pour connaître la cause d'un échec, vous pouvez cliquer sur le nom de la méthode de test.
+La méthode recommandée pour réaliser ces TP soit de rester sur IDEA pour exécuter, tester et versionner votre travail. Néanmoins, l'architecture de votre projet repose sur l'outil **maven** pour lequel a été défini le fichier `pom.xml` à la racine du projet, et qui a permis à IntelliJ IDEA de l'analyser correctement.
 
-La seconde manière est d'utiliser la ligne de commande directement. Avec cette méthode, vous ne pouvez pas choisir 
-individuellement la classe de test à lancer. Tous les tests sont exécutés en séquence l'un après l'autre. Cette méthode 
-est donc à préférer quand vous voulez vérifier tout votre code, par exemple avant de faire un *push* sur votre fork GitHub.
+Maven est un outil puissant permettant de gérer l'ensemble du cycle de vie d'une application : vérification, compilation, tests, packaging, installation, déploiement...
 
-Pour utiliser cette méthode, il vous suffit de vous rendre dans le dossier de votre projet et de lancer la 
-commande `mvn test` :
+Sans rentrer dans les détails, on peut exécuter la classe principale du TP via la ligne de commandes (ici en demandant de nettoyer et compiler le projet pluis d'exécuter la classe principale) :
 
 ```
-~/net-home/tpIHM/tp1-VotreUsername (master*)$ mvn test
+~/IdeaProjects/tp1-bashelier$ mvn clean compile exec:java
+WARNING: .... il y a ici d'éventuels Warning supprimés car sans intérêt pour le TP
 [INFO] Scanning for projects...
-[INFO]                                                                         
-[INFO] ------------------------------------------------------------------------
-[INFO] Building Tp 1 1.0-SNAPSHOT
-[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] ------------------------< fr.univ_amu.iut:tp1 >-------------------------
+[INFO] Building tp1 1.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ tp1 ---
+[INFO] Deleting /home/cyril/IdeaProjects/tp1-bashelier/target
 [INFO] 
 [INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ tp1 ---
-[INFO] Copying 34 resources
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 35 resources
 [INFO] 
-[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ tp1 ---
+[INFO] --- maven-compiler-plugin:3.8.0:compile (default-compile) @ tp1 ---
 [INFO] Changes detected - recompiling the module!
-[INFO] Compiling 1 source file to /home/sebastien/exercism/java/tp1/target/classes
+[INFO] Compiling 14 source files to /home/cyril/IdeaProjects/tp1-bashelier/target/classes
 [INFO] 
-[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ tp1 ---
-[INFO] skip non existing resourceDirectory /home/sebastien/exercism/java/tp1/src/test/resources
-[INFO] 
-[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ tp1 ---
-[INFO] Changes detected - recompiling the module!
-[INFO] Compiling 1 source file to /home/sebastien/exercism/java/tp1/target/test-classes
-[INFO] 
-[INFO] --- maven-surefire-plugin:2.17:test (default-test) @ tp1 ---
-[INFO] Surefire report directory: /home/sebastien/exercism/java/tp1/target/surefire-reports
-
--------------------------------------------------------
- T E S T S
--------------------------------------------------------
-Running fr.univ_amu.iut.AppTest
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.023 sec - in fr.univ_amu.iut.AppTest
-
-Results :
-
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
-
+[INFO] --- exec-maven-plugin:1.6.0:java (default-cli) @ tp1 ---
+Affichage des arguments de la ligne de commande :
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time: 1.573 s
-[INFO] Finished at: 2017-05-07T12:03:33+02:00
-[INFO] Final Memory: 16M/207M
+[INFO] Total time:  4.481 s
+[INFO] Finished at: 2020-04-25T15:25:01+02:00
+[INFO] ------------------------------------------------------------------------
+```
+
+De même, on peut exécuter l'ensemble des tests du projet via maven :
+
+```
+~/IdeaProjects/tp1-bashelier$ mvn test
+WARNING: .... il y a ici d'éventuels Warning supprimés car sans intérêt pour le TP
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------< fr.univ_amu.iut:tp1 >-------------------------
+[INFO] Building tp1 1.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ tp1 ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 35 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:compile (default-compile) @ tp1 ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ tp1 ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/cyril/IdeaProjects/tp1-bashelier/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:testCompile (default-testCompile) @ tp1 ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M4:test (default-test) @ tp1 ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running fr.univ_amu.iut.exercice5.MinesweeperBoardTest
+[WARNING] Tests run: 15, Failures: 0, Errors: 0, Skipped: 15, Time elapsed: 0.089 s - in fr.univ_amu.iut.exercice5.MinesweeperBoardTest
+[INFO] Running fr.univ_amu.iut.exercice3.ConvertisseurDeNombreRomainTest
+[WARNING] Tests run: 21, Failures: 0, Errors: 0, Skipped: 21, Time elapsed: 0.048 s - in fr.univ_amu.iut.exercice3.ConvertisseurDeNombreRomainTest
+[INFO] Running fr.univ_amu.iut.exercice6.ArgsTest
+[WARNING] Tests run: 18, Failures: 0, Errors: 0, Skipped: 18, Time elapsed: 0.048 s - in fr.univ_amu.iut.exercice6.ArgsTest
+[INFO] Running fr.univ_amu.iut.exercice2.FizzBuzzTest
+[WARNING] Tests run: 11, Failures: 0, Errors: 0, Skipped: 11, Time elapsed: 0.033 s - in fr.univ_amu.iut.exercice2.FizzBuzzTest
+[INFO] Running fr.univ_amu.iut.exercice4.RobotTest
+[WARNING] Tests run: 23, Failures: 0, Errors: 0, Skipped: 23, Time elapsed: 0.061 s - in fr.univ_amu.iut.exercice4.RobotTest
+[INFO] Running fr.univ_amu.iut.AppTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.056 s - in fr.univ_amu.iut.AppTest
+[INFO] Running fr.univ_amu.iut.exercice1.HelloWorldTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.05 s - in fr.univ_amu.iut.exercice1.HelloWorldTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[WARNING] Tests run: 93, Failures: 0, Errors: 0, Skipped: 88
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  7.461 s
+[INFO] Finished at: 2020-04-25T15:28:13+02:00
 [INFO] ------------------------------------------------------------------------
 ```
 
