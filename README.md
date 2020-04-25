@@ -149,12 +149,64 @@ principalement dans deux d'entre eux :
 - `src/main/java/fr/univ_amu/iut/` : Qui contiendra l'ensemble du code applicatif (le code des exercices).
 - `src/test/java/fr/univ_amu/iut/` : Qui contient les classes de test associées (le code vous aidant à vérifier votre solution).
 
-En principe, tout est déjà paramétré pour fonctionner avec le JDK (Java Development Kit) OpenJDK-11. 
+#### Exécution de la classe App
+
+Cette classe principale `App` du package `fr.univ_amu.iut` n'est qu'une classe "témoin" pour s'assurer que tout fonctionne normalement. Observez son code :
+
+```java
+package fr.univ_amu.iut;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+        System.out.println("Affichage des arguments de la ligne de commande :");
+        for (String arg : args) {
+            System.out.println(arg);
+        }
+    }
+}
+```
+
+On retrouve :
+
+- l'instruction `package`indiquant à quel package appartient la classe
+
+- l'instruction `public class App` commençant la définition de la classe. Notez que le fichier qui la contient doit avoir le même nom, avec l'extension `.java` ;
+
+- la définition de la méthode **publique** et **statique** `main` prenant en paramètres un tableau de `String` qui en fait une **classe exécutable** (la signature est stricte ; une méthode `main` qui n'aurait pas cette signature ne rendrait pas la classe exécutable). Dans cette méthode :
+
+  - l'instruction `System.out.println()` permet d'afficher un message sur la console en allant à la ligne ;
+  
+  - la boucle `for` est une boucle de type *foreach* qui permet de parcourir le tableau de `String` en attribuant à la variable `arg` un nouvel élément du tableau à chaque intération ;
+  
+  - une nouvelle instruction `System.out.println()` qui affiche l'élément courant
+
+En principe, le système et l'IDE sont prêts à fonctionner avec le JDK (Java Development Kit) OpenJDK-11. 
 Il ne devrait pas être nécessaire de modifier les paramètres du projet ou d'IDEA pour exécuter la classe principale `App.java` qui devrait apparaître avec un triangle vert, indiquant qu'on peut l'exécuter. Pour ce faire, dans la vue 'Project' effectuez un clic droit sur `App` et choisir Run 'App.main()'.
 
 En bas de la fenêtre, vous devriez voir le résultat de l'exécution de cette classe sur la console d'exécution :
 
 ![](src/main/resources/assets/run_App.png)
+
+Puisque nous n'avons pas fourni d'argument à l'exécution de la classe, la boucle n'affiche rien. Pour en donner sans passer par la ligne de commandes, il faut passer par le menu 'Run' puis 'Edit Configurations...' (ou clic droit sur la classe et 'Edit App.main()...' pour ouvrir un menu similaire) et saisir les arguments dans la zone 'Program arguments:' :
+
+![](src/main/resources/assets/run_debug_configuration.png)
+
+puis valider. Une nouvelle exécution de `App` affichera sur la console  :
+
+```
+Affichage des arguments de la ligne de commande :
+zéro
+un
+deux
+trois
+quatre
+```
 
 #### En cas de complications
 
