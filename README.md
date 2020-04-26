@@ -44,7 +44,7 @@ Elles vous seront utiles pour commencer à travailler sur vos TP. Comme vous all
 le découvrir le rendu, l'évaluation (éventuelle) et le suivi de votre travail passeront par GitHub. La première chose que vous allez 
 donc faire est de créer un fork d'un dépôt. Pour ce faire, rendez-vous sur le lien suivant : 
 
-[https://classroom.github.com/assignment-invitations/be2e508aa8f5fd632d0a9f2c30e3aaba](https://classroom.github.com/assignment-invitations/be2e508aa8f5fd632d0a9f2c30e3aaba) 
+[https://classroom.github.com/a/sq3xlG3c](https://classroom.github.com/a/sq3xlG3c) 
 
 GitHub va vous créer un dépôt contenant un fork du dépôt 'IUTInfoAix-m2105/tp1' et s'appellant 'IUTInfoAix-m2105/tp1-votreUsername'. 
 Vous apparaîtrez automatiquement comme contributeur de ce projet pour y pousser votre travail. Sachez qu'un robot 
@@ -458,9 +458,10 @@ Exercice d'introduction classique. Dites simplement "Hello world!"
 un nouvel environnement.
 
 #### Les objectifs sont simples:
-- Écrivez une fonction qui renvoie la chaîne "Hello, World!".
-- Exécutez la suite de tests et assurez-vous qu'elle réussit.
-- Poussez votre solution sur GitHub et vérifiez que votre badge Travis devient vert quelques minutes après.
+- vous devez activer les tests un par un.
+- Commencez par le premier, il doit échouer, implémentez ensuite la fonction de façon à ce qu'elle retourne `null`. Faites à nouveau tourner le test, il doit échouer. Puis implémentez la fonction pour qu'elle retourne "Hello, World!". Faites à nouveau tourner le test, il doit réussir.
+- Vous recommencez ensuite cette étape pour chacun des tests suivants, mais chaque fois que vous modifiez quoi que soit dans la fonction `main`, vous n'oublierez pas de vérifier que tous les tests activés passent.
+- Poussez votre solution sur GitHub.
 - Si tout va bien, vous serez prêt à travailler enfin sur votre premier exercice réel.
 
 Bien évidemment l'implémentation qui vous est demandée n'est pas canonique mais elle illustre sur un exemple très simple 
